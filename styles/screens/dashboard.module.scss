@@ -1,0 +1,13 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+}
