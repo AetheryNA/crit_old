@@ -3,7 +3,8 @@
 
 h1,
 h2,
-h3 {
+h3,
+label {
   font-family: $raleway;
 }
 
@@ -30,6 +31,11 @@ p {
   @include tablet {
     font-size: 0.9375rem;
     line-height: 1.125rem;
+  }
+
+  &.raleway {
+    font-family: $raleway;
+    line-height: 18px;
   }
 }
 

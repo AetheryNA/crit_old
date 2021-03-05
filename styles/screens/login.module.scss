@@ -1,0 +1,17 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.login {
+  background: {
+    color: $black-grey;
+  }
+
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}

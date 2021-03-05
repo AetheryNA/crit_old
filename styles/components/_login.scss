@@ -1,0 +1,46 @@
+.login {
+  &__container {
+    height: 100%;
+    
+    &--intro,
+    &--form {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+
+      p,
+      span,
+      h1,
+      h3,
+      label {
+        color: $white;
+      }
+    }
+  }
+
+  &__slogan {
+    margin: (40px)(0)(0);
+    font-size: 15px;
+    font-weight: $semi-bold;
+  }
+
+  &__logo {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 440px;
+    width: 100%;
+
+    label {
+      font-size: 10px;
+      font-weight: $semi-bold
+    }
+  }
+}
