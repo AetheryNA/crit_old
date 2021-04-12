@@ -8,28 +8,28 @@ h3 {
 }
 
 h1 {
-  font-size: 80px;
-  line-height: 94px;
+  font-size: 5rem;
+  line-height: 5.875rem;
 }
 
 h2 {
-  font-size: 62px;
-  line-height: 73px;
+  font-size: 3.875rem;
+  line-height: 4.5625rem;
 }
 
 h3 {
-  font-size: 50px;
-  line-height: 59px;
+  font-size: 3.125rem;
+  line-height: 3.6875rem;
 }
 
 p {
-  font-size: 10px;
-  line-height: 11px;
+  font-size: 0.625rem;
+  line-height: 0.6875rem;
   font-family: $roboto;
 
   @include tablet {
-    font-size: 15px;
-    line-height: 18px;
+    font-size: 0.9375rem;
+    line-height: 1.125rem;
   }
 }
 

@@ -1,10 +1,15 @@
 // All Styles
+// Mixins
+@import './mixins/media-queries';
+
 // Base
 @import './base/reset';
 @import './base/variables';
-@import './base/mixins';
 @import './base/fonts';
 @import './base/typography';
+
+// Screens
+@import './screens/dashboard';
 
 // Layouts
 @import './layouts/button';
