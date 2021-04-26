@@ -1,0 +1,39 @@
+// Typography
+// Headings
+
+h1,
+h2,
+h3 {
+  font-family: $raleway;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 5.875rem;
+}
+
+h2 {
+  font-size: 3.875rem;
+  line-height: 4.5625rem;
+}
+
+h3 {
+  font-size: 3.125rem;
+  line-height: 3.6875rem;
+}
+
+p {
+  font-size: 0.625rem;
+  line-height: 0.6875rem;
+  font-family: $roboto;
+
+  @include tablet {
+    font-size: 0.9375rem;
+    line-height: 1.125rem;
+  }
+}
+
+a {
+  color: $orange;
+  text-decoration: none;
+}

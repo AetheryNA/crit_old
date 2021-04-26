@@ -1,0 +1,21 @@
+.button {
+  background: {
+    color: $orange;
+    size: cover;
+  };
+
+  cursor: pointer;
+  padding: 10px;
+  transition: 0.3s ease;
+
+  &:hover {
+    background: {
+      color: $dark-orange;
+    }
+  }
+
+  p,
+  span {
+    color: $white;
+  }
+}

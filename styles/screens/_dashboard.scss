@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+}
