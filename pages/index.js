@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <Head>
         <title>CRIT</title>
-        <link rel="icon" href="favicon.ico" />
+        <link rel="icon" href="/img/favicon.ico" />
       </Head>
 
       <Login />
