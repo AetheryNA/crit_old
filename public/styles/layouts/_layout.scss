@@ -1,0 +1,76 @@
+body {
+  &.loginpage {
+    main {
+      @include mobile-s {
+        background: {
+          image: url('../../img/login-background-desktop.svg');
+          repeat: no-repeat;
+          size: contain;
+          position: -450px center;
+        }
+      }
+  
+      &::after,
+      &::before {
+        background: {
+          repeat: no-repeat;
+        };
+  
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 1;
+  
+        @include mobile-s{
+          display: none;
+        }
+      }
+  
+      &::after {
+        background: {
+          image: url('../../img/login-background-left-m.svg');
+        }
+  
+        left: -40px;
+        top: 30%;
+        height: 300px;
+        width: 250px;
+      }
+  
+      &::before {
+        background: {
+          image: url('../../img/login-background-right-m.svg');
+        }
+  
+        right: -60px;
+        top: 70%;
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+}
+
+main {
+  background-color: $black-grey;
+}
+
+.container {
+  padding: 0 20px;
+  max-width: 1440px;
+
+  @include desktop {
+    padding: 0 60px;
+    max-width: 100%;
+  }
+}
+
+.mobile {
+  &--hidden {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}
