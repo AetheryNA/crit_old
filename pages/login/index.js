@@ -1,25 +1,32 @@
 import Image from 'next/image'
 import LoginForm from '../../src/components/LoginForm'
+import Head from 'next/head'
 
 const Login = () => {
   return (
-    <div className="login">
-      <div className="container login__container--intro">
-        <Image 
-          className="login__logo"
-          src="/img/crit.svg"
-          alt="Crit"
-          width={170}
-          height={80}
-        />
+    <>
+      <Head>
+        <title> CRIT | Login </title>
+      </Head>
 
-        <p className="login__slogan raleway"> Being Social with Gamers </p>
-      </div>
+      <div className="login">
+        <div className="login__container--intro">
+          <Image 
+            className="login__logo"
+            src="/img/crit.svg"
+            alt="Crit"
+            width={170}
+            height={80}
+          />
 
-      <div className="container login__container--form">
-        <LoginForm />
+          <p className="login__slogan raleway"> Being Social with Gamers </p>
+        </div>
+
+        <div className="login__container--form">
+          <LoginForm />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
