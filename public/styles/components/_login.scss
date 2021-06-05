@@ -178,10 +178,12 @@
       color: $orange;
     }
 
+    border: none;
     cursor: pointer;
     font-family: $raleway;
     font-weight: $semi-bold;
     max-width: 70px;
+    outline: none;
     padding: 15px;
     text-align: center;
     text-transform: uppercase;

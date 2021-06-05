@@ -1,4 +1,4 @@
-const LoginForm = () => {
+const LoginForm = ({ handleLogin }) => {
   return (
     <div className="login__form">
       <h3 className="mobile--hidden login__head"> Login </h3>
@@ -18,9 +18,9 @@ const LoginForm = () => {
       <div className="login__submit">
         <p className="raleway login__submit-button"> Not a member?<span> Sign up </span></p>
 
-        <div className="login__button">
+        <button className="login__button" onClick={handleLogin}>
           <span> Login </span>
-        </div>
+        </button>
       </div>
 
     </div>
