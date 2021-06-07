@@ -1,29 +1,28 @@
-const LoginForm = ({ handleLogin }) => {
+const LoginForm = () => {
   return (
-    <div className="login__form">
-      <h3 className="mobile--hidden login__head"> Login </h3>
-      <p className="mobile--hidden raleway login__catchphrase"> Gamers are waiting for you. Login already.</p>
+    <form className="login-form">
+      <h3 className="login-form__head mobile--hidden "> Login </h3>
+      <p className="login-form__catchphrase mobile--hidden"> Gamers are waiting for you. Login already.</p>
 
-      <div className="login__username">
+      <div className="login-form__username">
         <label>Username</label>
         <input type="textbox" id="username-login" placeholder="Username"></input>
       </div>
       
-      <div className="login__password">
+      <div className="login-form__password">
         <label>Password</label>
         <input type="textbox" id="password-login" placeholder="Password"></input>
-        <p className="raleway">Forgot password?</p>
+        <p>Forgot password?</p>
       </div>
 
-      <div className="login__submit">
-        <p className="raleway login__submit-button"> Not a member?<span> Sign up </span></p>
+      <div className="login-form__submit">
+        <p className="login-form__submit-button"> Not a member?<span> Sign up </span></p>
 
-        <button className="login__button" onClick={handleLogin}>
+        <button className="login-form__button">
           <span> Login </span>
         </button>
       </div>
-
-    </div>
+    </form>
   )
 }
 

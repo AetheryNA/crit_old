@@ -10,10 +10,11 @@
 
 // Screens
 @import './screens/dashboard';
+@import './screens/login';
 
 // Layouts
 @import './layouts/button';
 @import './layouts/layout';
 
 // Components
-@import './components/login';
+@import './components/loginform';
