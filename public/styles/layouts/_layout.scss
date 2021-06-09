@@ -1,5 +1,7 @@
 body {
   &.loginpage {
+    overflow: hidden;
+
     main {
       @include mobile-s {
         background: {

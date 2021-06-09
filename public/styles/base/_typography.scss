@@ -37,4 +37,9 @@ p {
 a {
   color: $orange;
   text-decoration: none;
+  transition: $basic-transition;
+
+  &:hover {
+    color: $dark-orange;
+  }
 }
