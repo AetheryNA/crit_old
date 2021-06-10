@@ -4,7 +4,7 @@ import Head from 'next/head'
 
 const Layout = ({ children, router }) => {
   const currentURL = router.pathname
-  const pageURL = currentURL.replace(/\//g, "") + "page"
+  const pageURL = currentURL.replace(/\//g, "") + "-page"
   
   useEffect(() => {
     document.querySelector("body").classList.add(pageURL)

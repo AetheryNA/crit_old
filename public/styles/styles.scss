@@ -5,8 +5,9 @@
 // Base
 @import './base/reset';
 @import './base/animations';
-@import './base/fonts';
 @import './base/variables';
+@import './base/button';
+@import './base/fonts';
 @import './base/typography';
 
 // Screens
@@ -14,8 +15,8 @@
 @import './screens/login';
 
 // Layouts
-@import './layouts/button';
 @import './layouts/layout';
+@import './layouts/auth';
 
 // Components
-@import './components/loginform';
+@import './components/login-form';

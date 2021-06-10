@@ -1,0 +1,16 @@
+body {
+  &.login-page {
+    main {
+      overflow: hidden;
+
+      @include mobile-s {
+        background: {
+          image: url('../../img/login-background-desktop.svg');
+          repeat: no-repeat;
+          size: contain;
+          position: -450px center;
+        }
+      }
+    }
+  }
+}

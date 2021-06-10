@@ -1,22 +1,3 @@
-body {
-  &.loginpage {
-    overflow: hidden;
-
-    main {
-      overflow: hidden;
-
-      @include mobile-s {
-        background: {
-          image: url('../../img/login-background-desktop.svg');
-          repeat: no-repeat;
-          size: contain;
-          position: -450px center;
-        }
-      }
-    }
-  }
-}
-
 main {
   background-color: $black-grey;
 }

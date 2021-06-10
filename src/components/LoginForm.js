@@ -16,7 +16,7 @@ const LoginForm = () => {
       </div>
 
       <div className="login-form__submit">
-        <p className="login-form__submit-button"> Not a member?<a href="/signup"> Sign up </a></p>
+        <p className="login-form__link"> Not a member?<a href="/signup"> Sign up </a></p>
 
         <button className="login-form__button">
           <span> Login </span>

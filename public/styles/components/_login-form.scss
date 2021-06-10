@@ -108,21 +108,11 @@
   }
 
   
-  &__submit-button {
+  &__link {
     cursor: pointer;
     font-size: 13px;
     font-weight: $semi-bold;
-    transition: 0.3s ease;
-
-    span {
-      color: $orange;
-    }
-
-    &:hover {
-      span {
-        color: $dark-orange;
-      }
-    }
+    transition: $basic-transition;
 
     @include desktop {
       order: 2;
