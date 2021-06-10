@@ -6,12 +6,12 @@ const LoginForm = () => {
 
       <div className="login-form__username">
         <label>Username</label>
-        <input type="textbox" id="username-login" placeholder="Username"></input>
+        <input type="textbox" id="username-login"></input>
       </div>
       
       <div className="login-form__password">
         <label>Password</label>
-        <input type="textbox" id="password-login" placeholder="Password"></input>
+        <input type="textbox" id="password-login"></input>
         <p>Forgot password?</p>
       </div>
 
