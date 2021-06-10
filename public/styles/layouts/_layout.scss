@@ -1,0 +1,23 @@
+main {
+  background-color: $black-grey;
+}
+
+.container {
+  padding: 0 20px;
+  max-width: 1440px;
+
+  @include desktop {
+    padding: 0 60px;
+    max-width: 100%;
+  }
+}
+
+.mobile {
+  &--hidden {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}

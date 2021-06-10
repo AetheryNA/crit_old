@@ -3,7 +3,8 @@
 
 h1,
 h2,
-h3 {
+h3,
+label {
   font-family: $raleway;
 }
 
@@ -36,4 +37,9 @@ p {
 a {
   color: $orange;
   text-decoration: none;
+  transition: $basic-transition;
+
+  &:hover {
+    color: $dark-orange;
+  }
 }

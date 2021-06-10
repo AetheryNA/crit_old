@@ -1,10 +1,14 @@
+button,
+.button {
+  cursor: pointer;
+}
+
 .button {
   background: {
     color: $orange;
     size: cover;
   };
 
-  cursor: pointer;
   padding: 10px;
   transition: 0.3s ease;
 
