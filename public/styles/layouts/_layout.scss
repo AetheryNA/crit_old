@@ -3,6 +3,8 @@ body {
     overflow: hidden;
 
     main {
+      overflow: hidden;
+
       @include mobile-s {
         background: {
           image: url('../../img/login-background-desktop.svg');
