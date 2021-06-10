@@ -11,13 +11,7 @@ const Login = () => {
 
       <div className="login">
         <div className="login__container--intro">
-          <Image 
-            className="login__logo"
-            src="/img/crit.svg"
-            alt="Crit"
-            width={170}
-            height={80}
-          />
+          <img src="/img/crit.svg" />
 
           <p className="login__slogan"> Being Social with Gamers </p>
         </div>
