@@ -1,7 +1,7 @@
 const LoginForm = () => {
   return (
     <form className="login-form">
-      <h3 className="login-form__head mobile--hidden "> Login </h3>
+      <h3 className="login-form__head mobile--hidden"> Login </h3>
       <p className="login-form__catchphrase mobile--hidden"> Gamers are waiting for you. Login already.</p>
 
       <div className="login-form__username">
