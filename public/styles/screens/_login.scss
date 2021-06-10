@@ -49,21 +49,18 @@
   }
   
   &__container {
-    &--intro,
-    &--form {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      justify-content: center;
-      z-index: 2;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    z-index: 2;
 
-      p,
-      span,
-      h1,
-      label {
-        color: $white;
-      }
+    p,
+    span,
+    h1,
+    label {
+      color: $white;
     }
   }
 
