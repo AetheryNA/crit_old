@@ -16,7 +16,6 @@ const Layout = ({ children, router }) => {
         <link rel="icon" href="/img/favicon.ico" />
       </Head>
 
-      {currentURL === "/login" || "/signup" ? false : <h1> Active </h1>}
       <main className="container">
         { children }
       </main>
