@@ -1,5 +1,6 @@
 body {
-  &.login-page {
+  &.login-page,
+  &.signup-page {
     main {
       overflow: hidden;
 
