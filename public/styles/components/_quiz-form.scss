@@ -1,0 +1,58 @@
+.quiz-form {
+  margin: auto 0;
+
+  &__header {
+    text-align: center;
+
+    h3 {
+      color: $orange;
+      
+      &::after {
+        margin: -7px auto 0;
+        background-color: $white;
+        content: '';
+        display: block;
+        height: 3px;
+        width: 130px;
+
+        @include tablet {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    p {
+      margin: {
+        top: 15px;
+        bottom: 50px;
+      }
+
+      color: $white;
+    }
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 15px;
+
+    @include tablet {
+      grid-template-columns: auto auto;
+    }
+  }
+
+  &__answer {
+    @include quizButtonAnim;
+
+    background-color: $dark-grey;
+    border: 1px solid transparent;
+    color: $white;
+    height: 35px;
+    position: relative;
+    transition: $basic-transition;
+
+    @include tablet {
+      height: 50px;
+    }
+  }
+}

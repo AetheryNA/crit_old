@@ -15,6 +15,7 @@
 @import './screens/dashboard';
 @import './screens/login';
 @import './screens/sign-up';
+@import './screens/quiz';
 
 // Layouts
 @import './layouts/layout';
@@ -23,3 +24,4 @@
 // Components
 @import './components/login-form';
 @import './components/sign-up-form';
+@import './components/quiz-form';
