@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Image from 'next/image'
 
 import QuizForm from '../../../src/components/QuizForm'
@@ -6,10 +5,6 @@ import QuizForm from '../../../src/components/QuizForm'
 const Quiz = () => {
   return (
     <>
-      <Head>
-        <title> CRIT | Quiz </title>
-      </Head>
-
       <div className="quiz">
         <div className="quiz__container">
           <QuizForm />
