@@ -3,22 +3,22 @@ const SignUpForm = () => {
     <>
       <form action="" className="sign-up-form">
         <div className="sign-up-form__input-field">
-          <label for="username-sign-up">Username</label>
+          <label htmlFor="username-sign-up">Username</label>
           <input type="textbox" id="username-sign-up"></input>
         </div>
         
         <div className="sign-up-form__input-field">
-          <label for="password-sign-up">Password</label>
+          <label htmlFor="password-sign-up">Password</label>
           <input type="password" id="password-sign-up"></input>
         </div>
 
         <div className="sign-up-form__input-field">
-          <label for="confirm-password-sign-up">Confirm Password</label>
+          <label htmlFor="confirm-password-sign-up">Confirm Password</label>
           <input type="password" id="confirm-password-sign-up"></input>
         </div>
 
         <div className="sign-up-form__input-field">
-          <label for="email-sign-up">Email</label>
+          <label htmlFor="email-sign-up">Email</label>
           <input type="email" id="email-sign-up"></input>
         </div>
 

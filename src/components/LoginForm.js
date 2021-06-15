@@ -5,12 +5,12 @@ const LoginForm = () => {
       <p className="login-form__catchphrase mobile--hidden"> Gamers are waiting for you. Login already.</p>
 
       <div className="login-form__username">
-        <label>Username</label>
+        <label htmlFor="username-login">Username</label>
         <input type="textbox" id="username-login"></input>
       </div>
       
       <div className="login-form__password">
-        <label>Password</label>
+        <label htmlFor="password-login">Password</label>
         <input type="textbox" id="password-login"></input>
         <p>Forgot password?</p>
       </div>
@@ -18,7 +18,7 @@ const LoginForm = () => {
       <div className="login-form__submit">
         <p className="login-form__sign-up"> Not a member?<a href="/signup"> Sign up </a></p>
 
-        <button className="login-form__button">
+        <button type="submit" className="login-form__button">
           <span> Login </span>
         </button>
       </div>
