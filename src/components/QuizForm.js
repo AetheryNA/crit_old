@@ -1,6 +1,6 @@
 const QuizForm = () => {
   return (
-    <div className="quiz-form">
+    <form className="quiz-form">
       <div className="quiz-form__header">
         <h3> Question 1 </h3>
         <p> Select 1 of the options below </p>
@@ -12,7 +12,7 @@ const QuizForm = () => {
         <button className="quiz-form__answer"> Maybe </button>
         <button className="quiz-form__answer"> Idk </button>
       </div>
-    </div>
+    </form>
   )
 }
 
