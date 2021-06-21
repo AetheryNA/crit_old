@@ -19,11 +19,16 @@ h2 {
 }
 
 h3 {
-  font-size: 3.125rem;
+  font-size: 1.875rem;
   line-height: 3.6875rem;
+
+  @include tablet {
+    font-size: 3.125rem;
+  }
 }
 
 p {
+  color: $white;
   font-size: 0.625rem;
   line-height: 0.6875rem;
   font-family: $roboto;

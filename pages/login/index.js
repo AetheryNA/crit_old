@@ -1,14 +1,9 @@
 import Image from 'next/image'
 import LoginForm from '../../src/components/LoginForm'
-import Head from 'next/head'
 
 const Login = () => {
   return (
     <>
-      <Head>
-        <title> CRIT | Login </title>
-      </Head>
-
       <div className="login">
         <div className="login__container">
           <Image 

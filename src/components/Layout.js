@@ -5,6 +5,11 @@ import Head from 'next/head'
 const Layout = ({ children, router }) => {
   const currentURL = router.pathname
   const pageURL = currentURL.replace(/\//g, "") + "-page"
+  const routeTitle = currentURL.replace(/\//g, "")
+
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  } 
   
   useEffect(() => {
     document.querySelector("body").classList.add(pageURL)
@@ -13,6 +18,7 @@ const Layout = ({ children, router }) => {
   return (
     <>
       <Head>
+        <title> CRIT | { capitalizeFirstLetter(routeTitle) } </title>
         <link rel="icon" href="/img/favicon.ico" />
       </Head>
 

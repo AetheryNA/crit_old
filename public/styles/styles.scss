@@ -1,6 +1,7 @@
 // All Styles
 // Mixins
 @import './mixins/media-queries';
+@import './mixins/mixins';
 
 // Base
 @import './base/reset';
@@ -9,10 +10,13 @@
 @import './base/button';
 @import './base/fonts';
 @import './base/typography';
+@import './base/forms';
 
 // Screens
 @import './screens/dashboard';
 @import './screens/login';
+@import './screens/sign-up';
+@import './screens/quiz';
 
 // Layouts
 @import './layouts/layout';
@@ -20,3 +24,5 @@
 
 // Components
 @import './components/login-form';
+@import './components/sign-up-form';
+@import './components/quiz-form';

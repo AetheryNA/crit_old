@@ -1,47 +1,11 @@
 .login {
+  @include authBackground;
+
   display: flex;
   flex-direction: column;
   height: 100vh;
   overflow: visible;
   position: relative;
-
-  &::after,
-  &::before {
-    background: {
-      repeat: no-repeat;
-    };
-
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: 1;
-
-    @include mobile-s{
-      display: none;
-    }
-  }
-
-  &::after {
-    background: {
-      image: url('../../img/login-background-left-m.svg');
-    }
-
-    left: -40px;
-    top: 30%;
-    height: 300px;
-    width: 250px;
-  }
-
-  &::before {
-    background: {
-      image: url('../../img/login-background-right-m.svg');
-    }
-
-    right: -60px;
-    top: 70%;
-    width: 200px;
-    height: 200px;
-  }
 
   @include desktop {
     display: grid;
@@ -56,7 +20,6 @@
     justify-content: center;
     z-index: 2;
 
-    p,
     span,
     h1,
     label {
