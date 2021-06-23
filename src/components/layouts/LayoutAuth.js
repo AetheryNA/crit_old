@@ -2,7 +2,7 @@ import { withRouter } from 'next/router'
 import { useEffect } from 'react'
 import Head from 'next/head'
 
-const Layout = ({ children, router }) => {
+const LayoutAuth = ({ children, router }) => {
   const currentURL = router.pathname
   const pageURL = currentURL.replace(/\//g, "") + "-page"
   const routeTitle = currentURL.replace(/\//g, "")
@@ -29,4 +29,4 @@ const Layout = ({ children, router }) => {
   )
 }
 
-export default withRouter(Layout)
+export default withRouter(LayoutAuth)

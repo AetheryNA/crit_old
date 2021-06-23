@@ -1,7 +1,10 @@
-import Layout from '../src/components/Layout'
+import LayoutAuth from '../src/components/layouts/LayoutAuth'
+import LayoutBase from '../src/components/layouts/LayoutBase'
 import '../public/styles/styles.scss'
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
+  const Layout = Component.layout || LayoutBase
+
   return (
     <Layout>
       <Component {...pageProps} />  

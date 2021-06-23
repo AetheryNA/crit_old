@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+import LayoutAuth from '../../src/components/layouts/LayoutAuth'
 import QuizForm from '../../../src/components/QuizForm'
 
 const Quiz = () => {
@@ -23,5 +24,7 @@ const Quiz = () => {
     </>
   )
 }
+
+Quiz.layout = LayoutAuth
 
 export default Quiz

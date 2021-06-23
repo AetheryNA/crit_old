@@ -1,5 +1,19 @@
-main {
+main,
+.main-content {
   background-color: $black-grey;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+
+.main {
+  margin-top: 30px;
+
+  @include desktop {
+    margin-top: 25px;
+  }
 }
 
 .container {

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import LoginForm from '../../src/components/LoginForm'
+import LayoutAuth from '../../src/components/layouts/LayoutAuth'
 
 const Login = () => {
   return (
@@ -24,5 +25,7 @@ const Login = () => {
     </>
   )
 }
+
+Login.layout = LayoutAuth
 
 export default Login
