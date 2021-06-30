@@ -50,4 +50,18 @@
       }
     }
   }
+
+  &__error-pop {
+    margin-bottom: 20px;
+    text-align: center;
+    font-style: italic;
+
+    p {
+      color: $orange;
+    }
+  }
+
+  &__error {
+    outline: 2px solid $dark-orange;
+  }
 }
