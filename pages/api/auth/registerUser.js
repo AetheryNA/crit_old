@@ -3,18 +3,13 @@ import User from '../../../lib/models/user';
 
 const handler = nc()
   .post(async (req, res) => {
-    try {
-      const newUser = new User(req.body)
-      const registeredUser = newUser.create()
+    const newUser = new User(req.body);
 
-      if (!res.ok)
-        return res.status(400).json({ message: "Bad request sent T.T" })
-      else
-        return res.json({ message: "Request sent no hitches :)" })
-      
-    } catch (error) {
-      return res.status(400).json({ message: error })
-    }
+    await newUser.create().catch((err) => {
+      return res.status(400).json({ message: err })
+    })
+    
+    return res.json({ message: "Request sent no hitches :)" })
   })
 
 export default handler;
