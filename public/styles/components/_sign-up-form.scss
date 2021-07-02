@@ -50,4 +50,30 @@
       }
     }
   }
+
+  &__bump,
+  &__input-error {
+    font-style: italic;
+
+    p {
+      color: $orange;
+    }
+
+    span {
+      font-weight: $semi-bold;
+    }
+  }
+
+  &__bump {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__input-error {
+    margin-top: 5px;
+  }
+
+  &__error {
+    outline: 2px solid $dark-orange;
+  }
 }
