@@ -33,9 +33,9 @@ const SignUpForm = () => {
       const responseData = await response.json()
 
       if (!response.ok) {
-        // const responseDataError = responseData.error.target[0].toUpperCase()
+        const responseDataError = responseData.error.target[0].toUpperCase()
 
-        // setErrorAPI(responseDataError)
+        setErrorAPI(responseDataError)
       }
       else {
         setErrorAPI(null)
