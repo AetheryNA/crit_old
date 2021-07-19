@@ -18,6 +18,7 @@
     "json-server": "^0.16.3",
     "next": "10.0.7",
     "next-connect": "^0.10.1",
+    "next-iron-session": "^4.2.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "sass": "^1.35.1",
