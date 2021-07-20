@@ -89,7 +89,7 @@ const Navigation = () => {
       <div className="header__profile">
         <div className={`header__profile-picture ${statusTabActive ? "" : "active"}`} onClick={() => { handleStatusTab() }}>
           <Image
-            src="/img/pfp.jpg"
+            src="/img/pfp.png"
             width={80}
             height={80}
           />
@@ -112,7 +112,7 @@ const Navigation = () => {
       </ul>
 
       <div className="header__copyright">
-        <p> Copyright 2021 </p>
+        <p> Copyright&#169; 2021 </p>
       </div>
     </header>
   )

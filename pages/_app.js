@@ -1,4 +1,4 @@
-import LayoutAuth from '../src/components/layouts/LayoutAuth'
+import LayoutAuth from '../src/components/layouts/Auth'
 import LayoutBase from '../src/components/layouts/LayoutBase'
 import '../public/styles/styles.scss'
 
