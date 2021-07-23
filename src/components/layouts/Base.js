@@ -1,8 +1,10 @@
 import { withRouter } from 'next/router'
 import Head from 'next/head'
+import Aside from '../Aside'
+import Header from '../Header'
 import { pageTitle, capitalizeFirstLetter } from '../../helpers/setPageTitle'
 
-const LayoutAuth = ({ children, router }) => {
+const LayoutBase = ({ children, router }) => {
   return (
     <>
       <Head>
@@ -10,11 +12,16 @@ const LayoutAuth = ({ children, router }) => {
         <link rel="icon" href="/img/favicon.ico" />
       </Head>
 
-      <main className="container">
-        { children }
-      </main>
+      <div className="main-content">
+        <Aside />
+        
+        <main className="container main">
+          <Header />
+          { children }
+        </main>
+      </div>
     </>
   )
 }
 
-export default withRouter(LayoutAuth)
+export default withRouter(LayoutBase)

@@ -1,5 +1,5 @@
 import LayoutAuth from '../src/components/layouts/Auth'
-import LayoutBase from '../src/components/layouts/LayoutBase'
+import LayoutBase from '../src/components/layouts/Base'
 import '../public/styles/styles.scss'
 
 const MyApp = ({ Component, pageProps }) => {
