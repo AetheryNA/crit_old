@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Image from "next/image"
-import LogoffSVG from "../../public/img/icons/logoff.svg"
 import Notifications from "./Notifactions"
+import LogOff from './HeaderLogoff'
 
 const Header = () => {
   const [listNotifications, setListNotifications] = useState([
@@ -30,15 +30,9 @@ const Header = () => {
 
       <h3> Band together! </h3>
 
-      <div className="header__logoff">
-        <LogoffSVG />
-      </div>
+      <LogOff />
 
-      <div className="header__information">
-        <div className="header__player-list">
-
-        </div>
-
+      <div className="header-information">
         <Notifications notifications={listNotifications}/>
       </div>
     </header>

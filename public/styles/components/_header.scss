@@ -3,6 +3,20 @@
   display: flex;
   justify-content: space-between;
 
+  &-information {
+    svg {
+      color: $white;
+      max-width: 15px;
+      height: 20px;
+      width: 100%;
+
+      @include desktop {
+        max-width: 20px;
+        height: 25px;
+      }
+    }
+  }
+
   h3 {
     margin: {
       right: auto;
@@ -26,140 +40,6 @@
     @include desktop {
       max-width: 50px;
       height: 45px;
-    }
-  }
-
-  &__information {
-    svg {
-      color: $white;
-      max-width: 15px;
-      height: 20px;
-      width: 100%;
-
-      @include desktop {
-        max-width: 20px;
-        height: 25px;
-      }
-    }
-  }
-
-  &__icon {
-    background-color: transparent;
-    cursor: pointer;
-
-    svg {
-      transition: $basic-transition;
-    }
-
-    &:hover {
-      svg {
-        color: $orange;
-      }
-    }
-
-    &.active {
-      svg {
-        color: $dark-orange;
-      }
-    }
-  }
-
-  &__notifications {
-    position: relative;
-
-    &.active {
-      > ul {
-        display: block;
-      }
-    }
-  }
-
-  &__notifications-list {
-    padding: {
-      top: 20px;
-      right: 10px;
-      bottom: 20px;
-      left: 20px;
-    }
-
-    animation: fadeIn 0.3s;
-    background-color: $semi-dark-grey;
-    border-radius: 10px;
-    height: 60px;
-    overflow-y: scroll;
-    position: absolute;
-    right: 0;
-    top: 40px;
-    width: 150px;
-
-    &::-webkit-scrollbar {
-      width: 3px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background-color: $semi-dark-grey;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: $orange;
-    }
-
-    @include tablet {
-      height: 100px;
-      width: 200px;
-    }
-  }
-
-  &__notifications-item {
-    margin-bottom: 10px;
-    font-weight: $thin;
-
-    &::after {
-      margin-top: 10px;
-      content: '';
-      display: block;
-      width: 95%;
-      height: 1px;
-      background-color: $grey;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-
-      &::after {
-        content: '';
-        display: none;
-      }
-    }
-  }
-
-  &__logoff {
-    margin-right: 20px;
-    cursor: pointer;
-
-    svg {
-      color: $white;
-      height: 17px;
-      max-width: 17px;
-      transition: $basic-transition;
-      width: 100%;
-
-      @include desktop {
-        height: 20px;
-        max-width: 20px;
-      }
-    }
-
-    &:hover {
-      svg {
-        color: $orange;
-      }
-    }
-
-    &.active {
-      svg {
-        color: $dark-orange;
-      }
     }
   }
 }
