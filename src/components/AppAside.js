@@ -6,11 +6,11 @@ const Aside = () => {
   const navigationItems = navItems
 
   return (
-    <aside className="aside">
+    <aside className="app-aside">
       <ProfileInfo />
       <Navigation navigationItems={ navigationItems }/>
 
-      <div className="aside__copyright">
+      <div className="app-aside__copyright">
         <p> Copyright&#169; 2021 </p>
       </div>
     </aside>

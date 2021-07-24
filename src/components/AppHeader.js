@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Image from "next/image"
-import Notifications from "./Notifactions"
+import Notification from "./Notifaction"
 import LogOff from './HeaderLogoff'
 
 const Header = () => {
@@ -17,10 +17,10 @@ const Header = () => {
   ])
 
   return (
-    <header className="header">
-      <div className="header__logo-wrap">
+    <header className="app-header">
+      <div className="app-header__logo-wrap">
         <Image 
-          className="header__logo"
+          className="app-header__logo"
           src="/img/crit-no-txt.svg"
           alt="Crit"
           width={100}
@@ -32,8 +32,8 @@ const Header = () => {
 
       <LogOff />
 
-      <div className="header-information">
-        <Notifications notifications={listNotifications}/>
+      <div className="app-header-information">
+        <Notification notifications={listNotifications}/>
       </div>
     </header>
   )

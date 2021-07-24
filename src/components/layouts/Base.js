@@ -1,7 +1,7 @@
 import { withRouter } from 'next/router'
 import Head from 'next/head'
-import Aside from '../Aside'
-import Header from '../Header'
+import Aside from '../AppAside'
+import Header from '../AppHeader'
 import { pageTitle } from '../../helpers/setPageTitle'
 
 const LayoutBase = ({ children, router }) => {
