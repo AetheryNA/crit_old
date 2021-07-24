@@ -1,0 +1,29 @@
+.log-off {
+  margin-right: 20px;
+  background-color: transparent;
+
+  svg {
+    color: $white;
+    height: 17px;
+    max-width: 17px;
+    transition: $basic-transition;
+    width: 100%;
+
+    @include desktop {
+      height: 20px;
+      max-width: 20px;
+    }
+  }
+
+  &:hover {
+    svg {
+      color: $orange;
+    }
+  }
+
+  &.active {
+    svg {
+      color: $dark-orange;
+    }
+  }
+}

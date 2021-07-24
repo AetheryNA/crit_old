@@ -1,7 +1,9 @@
-import Layout from '../src/components/Layout'
+import LayoutBase from '../src/components/layouts/Base'
 import '../public/styles/styles.scss'
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
+  const Layout = Component.layout || LayoutBase
+
   return (
     <Layout>
       <Component {...pageProps} />  

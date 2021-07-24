@@ -1,3 +1,4 @@
+import LayoutAuth from '../../src/components/layouts/Auth'
 import SignUpForm from '../../src/components/SignUpForm'
 
 const SignUp = () => {
@@ -16,5 +17,7 @@ const SignUp = () => {
     </>
   )
 }
+
+SignUp.layout = LayoutAuth
 
 export default SignUp

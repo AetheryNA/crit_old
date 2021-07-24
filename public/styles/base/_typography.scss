@@ -5,6 +5,7 @@ h1,
 h2,
 h3,
 label {
+  color: $white;
   font-family: $raleway;
 }
 
@@ -47,4 +48,9 @@ a {
   &:hover {
     color: $dark-orange;
   }
+}
+
+li {
+  color: $white;
+  font-family: $roboto;
 }
