@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import LayoutAuth from '../../src/components/layouts/LayoutAuth'
+import LayoutAuth from '../../../src/components/layouts/Auth'
 import QuizForm from '../../../src/components/QuizForm'
 
 const Quiz = () => {

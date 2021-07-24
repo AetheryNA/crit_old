@@ -1,0 +1,74 @@
+.navigation {
+  margin-bottom: auto;
+
+  &__menu {
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__menu-item {
+    margin-bottom: 35px;
+    text-align: center;
+    width: 100%;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $white;
+
+      @include desktop {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+      }
+
+      span {
+        margin-left: 15px;
+        display: none;
+        font-family: $raleway;
+        font-weight: $semi-bold;
+
+        @include desktop {
+          display: block;
+        }
+      }
+
+      svg {
+        height: 20px;
+        width: 20px;
+
+        @include mobile-xs {
+          height: 25px;
+          width: 25px;
+        }
+
+        @include desktop {
+          height: 20px;
+          width: 20px;
+        }
+      }
+
+      span,
+      svg {
+        transition: $basic-transition;
+      }
+     
+      &.active {
+        span,
+        svg {
+          color: $dark-orange;
+        }
+      }
+
+      &:hover {
+        span,
+        svg {
+          color: $orange
+        }
+      }
+    }
+  }
+}

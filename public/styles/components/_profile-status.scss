@@ -1,0 +1,54 @@
+.profile {
+  margin-top: 25px;
+  margin-bottom: auto;
+  cursor: pointer;
+  position: relative;
+
+  @include desktop {
+    margin-bottom: 100px;
+  }
+
+  &__picture {
+    margin: 0 auto auto;
+    max-width: 40px;
+    position: relative;
+    width: 100%;
+  
+    img {
+      border-radius: 50%;
+    }
+  
+    @include mobile-xs {
+      max-width: 50px;
+    }
+  
+    @include desktop {
+      max-width: 80px;
+    }
+  
+    &.active {
+      > ul {
+        display: block;
+      }
+    }
+  }
+  
+  &__description {
+    margin-top: 20px;
+    display: none;
+    text-align: center;
+  
+    @include desktop {
+      display: block;
+    }
+  
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+    }
+  
+    p {
+      margin-top: 10px;
+    }
+  }
+}
