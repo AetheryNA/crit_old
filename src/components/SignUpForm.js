@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import httpClient from "../../lib/adapters/httpClient"
 
 const SignUpForm = () => {
   const [username, setUsername] = useState('')
@@ -22,14 +23,8 @@ const SignUpForm = () => {
     if (password === passwordConfirm) {
       setErrorPassword(null)
 
-      const response = await fetch('/api/auth/registerUser', {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(userParams)
-      })
-
+      const postReq = new httpClient()
+      const response = await postReq.post(userParams)
       const responseData = await response.json()
 
       if (!response.ok) {
@@ -49,18 +44,18 @@ const SignUpForm = () => {
 
   return (
       <form className="sign-up-form" onSubmit={handleRegister}>
-        {registerUserMsg !== null ? 
+        {registerUserMsg && (
           <div className="sign-up-form__bump">
             <p> {registerUserMsg} </p>
           </div>
-        : null}
+        )}
 
         <div className="sign-up-form__input-field">
           <label htmlFor="username-sign-up">Username</label>
           <input 
             type="textbox" 
             id="username-sign-up" 
-            className={errorAPI !== null ? `sign-up-form__error` : null} 
+            className={errorAPI && (`sign-up-form__error`)} 
             autoComplete="off" 
             required 
             onChange={(e) => setUsername(e.target.value)} 
@@ -80,7 +75,7 @@ const SignUpForm = () => {
           <input 
             type="password" 
             id="password-sign-up"
-            className={errorPassword !== null ? `sign-up-form__error` : null}
+            className={errorPassword && (`sign-up-form__error`)}
             required 
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -91,7 +86,7 @@ const SignUpForm = () => {
           <input 
             type="password" 
             id="confirm-password-sign-up" 
-            className={errorPassword !== null ? `sign-up-form__error` : null} 
+            className={errorPassword && (`sign-up-form__error`)} 
             onChange={(e) => setPasswordConfirm(e.target.value)} 
           />
 
@@ -109,7 +104,7 @@ const SignUpForm = () => {
           <input 
             type="email" 
             id="email-sign-up" 
-            className={errorAPI !== null ? `sign-up-form__error` : null} 
+            className={errorAPI && (`sign-up-form__error`)} 
             autoComplete="off" 
             required 
             onChange={(e) => setEmail(e.target.value)} 
@@ -124,11 +119,9 @@ const SignUpForm = () => {
 
         </div>
 
-      <div className="sign-up-form__submit-field">
         <button type="submit" className="sign-up-form__button button">
           <span> Sign Up </span>
         </button>
-      </div>
     </form>
   )
 }

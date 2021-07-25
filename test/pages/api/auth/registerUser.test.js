@@ -1,12 +1,12 @@
 import { afterAll, beforeAll, expect, jest } from "@jest/globals"
 import User from "../../../../lib/models/user"
-import prisma from '../../../../lib/adapters/client'
+import prisma from '../../../../lib/adapters/prismaClient'
 import bcrypt from 'bcrypt'
 
 describe('Creating a user', () => {
   jest.mock('../../../../lib/models/user')
   jest.mock('../../../../lib/errors/formError')
-  jest.mock('../../../../lib/adapters/client')
+  jest.mock('../../../../lib/adapters/prismaClient')
   jest.mock('bcrypt')
 
   beforeAll(done => {
