@@ -1,7 +1,13 @@
 import LayoutAuth from '../../src/components/layouts/Auth'
 import SignUpForm from '../../src/components/SignUpForm'
+import useUser from '../../lib/auth/useUser'
 
 const SignUp = () => {
+  const { user } = useUser({ redirectTo: '/' })
+
+  if (!user?.LoggedIn)
+    return <p> Loading </p> 
+
   return (
     <>
       <div className="sign-up">
