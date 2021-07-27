@@ -11,17 +11,17 @@ describe('User logoff testing', () => {
     password: process.env.SECRET_COOKIE_PASSWORD,
   })
 
-  test('should destroy the current user session', () => {
+  test('should destroy the current user session', async () => {
     const handler = nc()
       .use(session)
       .post(async(req, res) => {
-        req.session.set('session', {
-          recorded: 'true'
+        await req.session.set('user', {
+          username: "Hello"
         })
-        
+
         req.session.destroy()
 
-        expect(req.session).toEqual(null)
+        expect(req.session.get('user')).toBe(null)
       })
   })
 })
