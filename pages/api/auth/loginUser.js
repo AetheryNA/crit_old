@@ -1,5 +1,5 @@
 import nc from 'next-connect'
-import prisma from '../../../lib/adapters/client'
+import prisma from '../../../lib/adapters/prismaClient'
 import bcrypt from 'bcrypt'
 import withSession from '../../../lib/auth/session'
 
