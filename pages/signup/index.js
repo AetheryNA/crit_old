@@ -3,8 +3,6 @@ import SignUpForm from '../../src/components/SignUpForm'
 import useUser from '../../lib/auth/useUser'
 
 const SignUp = () => {
-  const { user } = useUser({ redirectTo: '/' })
-
   return (
     <>
       <div className="sign-up">
