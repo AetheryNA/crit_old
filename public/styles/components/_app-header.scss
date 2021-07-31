@@ -3,6 +3,21 @@
   display: flex;
   justify-content: space-between;
 
+  &__button {
+    color: $white;
+    font-size: 0.9rem;
+    font-family: $raleway;
+    font-weight: $semi-bold;
+    text-transform: uppercase;
+    max-width: 60px;
+    text-align: center;
+    width: 100%;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
   &-information {
     svg {
       color: $white;

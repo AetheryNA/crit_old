@@ -1,5 +1,6 @@
 import LayoutAuth from '../../src/components/layouts/Auth'
 import SignUpForm from '../../src/components/SignUpForm'
+import useUser from '../../lib/auth/useUser'
 
 const SignUp = () => {
   return (

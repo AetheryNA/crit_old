@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import httpClient from "../../lib/adapters/httpClient"
+import { useRouter } from 'next/router'
 
 const SignUpForm = () => {
   const [username, setUsername] = useState('')
@@ -9,6 +10,8 @@ const SignUpForm = () => {
   const [errorPassword, setErrorPassword] = useState(null)
   const [errorAPI, setErrorAPI] = useState(null)
   const [registerUserMsg, setRegisterUserMsg] = useState(null)
+
+  const router = useRouter()
   
   const userParams = {
     username: username,
@@ -35,6 +38,7 @@ const SignUpForm = () => {
       else {
         setErrorAPI(null)
         setRegisterUserMsg("You have been registered! Welcome to Crit!")
+        router.push('/login')
       }
 
     } else {

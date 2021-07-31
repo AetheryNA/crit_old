@@ -2,8 +2,11 @@ import { useState } from 'react'
 import Image from "next/image"
 import Notification from "./Notifaction"
 import LogOff from './HeaderLogoff'
+import useUser from '../../lib/auth/useUser'
 
 const Header = () => {
+  const { user } = useUser()
+
   const [listNotifications, setListNotifications] = useState([
     {
       notificationValue: "Felicia sent you a friend request",
@@ -30,11 +33,19 @@ const Header = () => {
 
       <h3> Band together! </h3>
 
-      <LogOff />
+      {!user?.LoggedIn ? 
+        <a className="app-header__button button" href="/login">
+          Login
+        </a>
+      :
+        <>
+          <LogOff />
 
-      <div className="app-header-information">
-        <Notification notifications={listNotifications}/>
-      </div>
+          <div className="app-header-information">
+            <Notification notifications={listNotifications}/>
+          </div>
+        </>
+      }
     </header>
   )
 }
