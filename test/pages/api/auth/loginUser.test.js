@@ -8,32 +8,48 @@ describe("Login testing",() => {
   jest.mock("bcrypt")
   jest.mock("next-connect")
 
-  beforeAll(done => {
-    done()
+  beforeAll(async () => {
+    const saltRounds = 3
+    const passedPassword = 'user99'
+    const salt = await bcrypt.genSalt(saltRounds)
+    const hashedPassowrd = await bcrypt.hash(passedPassword, salt)
+
+    await prisma.users.create({
+      data: {
+        username: 'user99',
+        password: hashedPassowrd,
+        email: 'user99@mail.com'
+      }
+    })
   })
 
-  afterAll(done => {
+  afterAll(async () => {
+    await prisma.users.delete({
+      where: {
+        username: 'user99'
+      }
+    })
+
     prisma.$disconnect()
-    done()
   })
 
   test("Check if username is found", async () => {
     await prisma.users.findUnique({
       where: {
-        username: "bcrypt",
+        username: "user99",
       },
       select: {
         username: true,
       }
     }).then((user) => {
-      expect(user.username).toEqual("bcrypt")
+      expect(user.username).toEqual("user99")
     })
   })
 
   test("Check if password is decrypted", async () => {
     const loggedUser = await prisma.users.findUnique({
       where: {
-        username: "bcrypt",
+        username: "user99",
       },
       select: {
         password: true,
@@ -41,7 +57,7 @@ describe("Login testing",() => {
     })
 
     const retrievedPassword = loggedUser.password
-    const sentPassword = "bcrypt"
+    const sentPassword = "user99"
     const hashedPassword = await bcrypt.compare(sentPassword, retrievedPassword)
 
     expect(hashedPassword).toEqual(true)
@@ -50,7 +66,7 @@ describe("Login testing",() => {
   test("Check if session is saved", async () => {
     const loggedUser = await prisma.users.findUnique({
       where: {
-        username: "bcrypt",
+        username: "user99",
       },
       select: {
         id: true,
