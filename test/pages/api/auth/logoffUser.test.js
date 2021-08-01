@@ -12,7 +12,7 @@ describe('User logoff testing', () => {
   })
 
   test('should destroy the current user session', async () => {
-    const handler = nc()
+    const testHandler = nc()
       .use(session)
       .post(async(req, res) => {
         await req.session.set('user', {
