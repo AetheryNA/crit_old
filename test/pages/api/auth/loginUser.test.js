@@ -56,8 +56,6 @@ describe("Login testing",() => {
       }
     })
 
-    console.log(loggedUser)
-
     const retrievedPassword = loggedUser.password
     const sentPassword = "user99"
     const hashedPassword = await bcrypt.compare(sentPassword, retrievedPassword)
