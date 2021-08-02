@@ -26,3 +26,13 @@ model posts {
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt 
 }
+
+model posts {
+  post_id Int @id @default(autoincrement())
+  user_id Int 
+  image_url String
+  content String
+  like_count Int
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt 
+}
