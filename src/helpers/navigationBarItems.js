@@ -23,7 +23,7 @@ const navigationItems = [
   {
     name: 'Activity Feed',
     className: 'aside__nav-item',
-    href: '/',
+    href: '/activity-feed',
     svg: <FeedSVG />,
     isActive: false,
   },

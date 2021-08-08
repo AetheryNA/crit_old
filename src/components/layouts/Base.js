@@ -17,7 +17,9 @@ const LayoutBase = ({ children, router }) => {
         
         <main className="container main">
           <Header />
-          { children }
+          <main className="inner-dashboard">
+            { children }
+          </main>
         </main>
       </div>
     </>

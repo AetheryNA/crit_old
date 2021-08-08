@@ -1,0 +1,59 @@
+.inner-dashboard {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+
+  @include tablet {
+    margin-top: 55px;
+    flex-direction: row;
+  }
+}
+
+.dashboard {
+  &-header {
+    margin-bottom: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
+
+    svg {
+      color: $white;
+    }
+
+    h3 {
+      margin-left: 15px;
+      font-size: 15px;
+      font-weight: $semi-bold;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+  }
+
+  &-left {
+    width: 100%;
+
+    @include tablet {
+      width: 60%;
+    }
+  }
+
+  &-right {
+    width: 100%;
+
+    @include tablet {
+      width: 40%;
+    }
+
+    &--small {
+      width: 100%;
+
+      @include tablet {
+        width: 15%;
+      }
+    }
+  }
+}

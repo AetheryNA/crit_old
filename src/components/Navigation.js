@@ -9,7 +9,6 @@ const Navigation = ({ navigationItems }) => {
         <a 
           href={item.href} 
           onClick={(e) => {
-            e.preventDefault()
             handleClick(index) 
           }} 
           className={item.isActive ? 'active' : null}
