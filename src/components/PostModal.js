@@ -7,10 +7,15 @@ const PostModal = () => {
   const [contentError, setContentError] = useState()
   const [posted, setPosted] = useState()
 
+  const data = {
+    content: content,
+    like_count : 0,
+  }
+
   const newImageForm = new FormData()
   newImageForm.append('file', image)
-  // newImageForm.append('content', content)
-  // newImageForm.append('like_count', 0)
+  newImageForm.append('content', content)
+  newImageForm.append('like_count', 0)
 
   const createPost = async(e) => {
     e.preventDefault()
@@ -21,13 +26,13 @@ const PostModal = () => {
     if (content) {
       axios({
         method: 'post',
-        url: 'api/uploadFile',
+        url: 'api/post',
         data: newImageForm,
-        headers: {"Content-type" : "multipart/form-data"}
+        headers: {"Content-type" : "application/json"}
       }).then(() => {
         setPosted('Posted!')
-      }).catch(() => {
-        console.log('Something went wrong');
+      }).catch((err) => {
+        console.log("Something went wrong", err);
       })
 
     } else {

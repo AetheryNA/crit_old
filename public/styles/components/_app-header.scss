@@ -4,12 +4,13 @@
   justify-content: space-between;
 
   &__button {
+    border-radius: 55px;
     color: $white;
     font-size: 0.9rem;
     font-family: $raleway;
     font-weight: $semi-bold;
     text-transform: uppercase;
-    max-width: 60px;
+    max-width: 80px;
     text-align: center;
     width: 100%;
 
