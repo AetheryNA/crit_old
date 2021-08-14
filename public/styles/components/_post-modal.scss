@@ -1,0 +1,30 @@
+.post-modal {
+  background-color: $semi-dark-grey;
+
+  input,
+  textarea,
+  button {
+    color: $white;
+  }
+
+  input,
+  textarea {
+    background-color: rgba($color: $white, $alpha: .02);
+  }
+  
+  textarea {
+    outline: $orange;
+
+    &:focus {
+      outline: 2px solid $orange;
+    }
+  }
+
+  button {
+    text-transform: uppercase;
+  }
+
+  &__error {
+    color: $orange;
+  }
+}
