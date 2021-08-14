@@ -43,7 +43,6 @@ const handler = nc()
     const newPost = new Post(postData)
 
     await newPost.createPost().catch((err) => {
-      console.log(err);
       return res
         .status(400)
         .json({
