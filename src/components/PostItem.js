@@ -24,18 +24,15 @@ const PostItem = ({ postItems }) => {
             ""
             :
             <div className="post-item__image mb-6">
-              <img className="mx-auto" src="https://picsum.photos/1600/900" alt="" />  
+              <img className="mx-auto" src={post.image_url} alt="" />  
             </div>
           }
           <p>
             {post.content}
           </p>
           <div className="post-item__social-status flex justify-end mt-6">
-            <div className="post-item__svg mr-2.5">
-              <Like />
-            </div>
             <div className="post-item__svg">
-              <Favourite />
+              <Like />
             </div>
           </div>
         </div>
