@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Like from '../../public/img/icons/like.svg'
-import Favourite from '../../public/img/icons/favourite.svg'
 
 const PostItem = ({ postItems }) => {
   const [postState, setPostState] = useState(postItems.findPosts)
@@ -14,7 +13,6 @@ const PostItem = ({ postItems }) => {
           <img
             className="h-8 w-8 rounded-full"
             src={userData.avatar_url === '' ? "/img/pfp.png" : userData.avatar_url}
-            alt=""
           />
           <a className="ml-3"> {userData.username} </a>
         </div>
@@ -24,7 +22,7 @@ const PostItem = ({ postItems }) => {
             ""
             :
             <div className="post-item__image mb-6">
-              <img className="mx-auto" src={post.image_url} alt="" />  
+              <img className="mx-auto" src={post.image_url} />  
             </div>
           }
           <p>
