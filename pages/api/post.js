@@ -17,16 +17,28 @@ const handler = nc()
   .use(withSession)
   .post(async(req, res) => {
     const data = req.body
+    
+    let imageData = {
+      image_url : '',
+    }
+
+    if (req.file) {
+      const filePath = req.file.path
+      const newFilePath = filePath.replace(/public.?/, '')
+
+      imageData = {
+        image_url: newFilePath
+      }
+    }
 
     const postingData = {
-      image_url: req.file.path,
       content: data.content,
       like_count: parseInt(data.like_count),
     }
 
     const user = req.session.get('user')
-
-    const postData = Object.assign({user_id: user.id}, postingData)
+    
+    const postData = Object.assign({user_id : user.id}, imageData, postingData)
 
     const newPost = new Post(postData)
 
