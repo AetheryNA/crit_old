@@ -24,7 +24,7 @@ const handler = nc()
 
     if (req.file) {
       const filePath = req.file.path
-      const newFilePath = filePath.replace('public\\', '')
+      const newFilePath = filePath.replace(/public.?/, '')
 
       imageData = {
         image_url: newFilePath
@@ -37,11 +37,8 @@ const handler = nc()
     }
 
     const user = req.session.get('user')
-    const userId = {
-      user_id : user.id
-    }
     
-    const postData = Object.assign(userId, imageData, postingData)
+    const postData = Object.assign({user_id : user.id}, imageData, postingData)
 
     const newPost = new Post(postData)
 
