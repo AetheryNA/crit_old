@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Plus from '../../public/img/icons/plus.svg'
-import PostModal from './PostModal'
+import PostDropdown from './PostDropdown'
 
 const AddPost = () => {
   const [viewInsertPost, setViewInsertPost] = useState(false)
@@ -13,7 +13,7 @@ const AddPost = () => {
     </button>
 
     { viewInsertPost ?
-      <PostModal />
+      <PostDropdown />
       : null}
     </>
   )

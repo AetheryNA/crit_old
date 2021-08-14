@@ -1,16 +1,11 @@
 import axios from "axios"
 import { useState } from "react"
 
-const PostModal = () => {
+const PostDropdown = () => {
   const [content, setContent] = useState()
   const [image, setImage] = useState()
   const [contentError, setContentError] = useState()
   const [posted, setPosted] = useState()
-
-  const data = {
-    content: content,
-    like_count : 0,
-  }
 
   const newImageForm = new FormData()
   newImageForm.append('file', image)
@@ -56,4 +51,4 @@ const PostModal = () => {
   )
 }
 
-export default PostModal
+export default PostDropdown
