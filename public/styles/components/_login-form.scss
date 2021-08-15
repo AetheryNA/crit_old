@@ -128,7 +128,6 @@
     cursor: pointer;
     font-family: $raleway;
     font-weight: $semi-bold;
-    max-width: 70px;
     outline: none;
     text-align: center;
     text-transform: uppercase;
@@ -143,7 +142,6 @@
     @include desktop {
       margin: 0 0 10px;
       padding: 15px 0;
-      max-width: unset;
       order: 1;
       width: 100%;
     }

@@ -13,12 +13,12 @@ const SettingsProfileEdit = () => {
         <Edit />
       </div>
       <div className="settings-profile-edit__field">
-        <h3> Username </h3>
-        <p> Username </p>
+        <h3> Current Password </h3>
+        <p> ********* </p>
         <Edit />
       </div>
       <div className="settings-profile-edit__field">
-        <h3> Password </h3>
+        <h3> New Password </h3>
         <p> ********* </p>
         <Edit />
       </div>

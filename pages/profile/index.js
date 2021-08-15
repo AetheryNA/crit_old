@@ -1,7 +1,6 @@
 import UserBanner from "../../src/components/UserBanner"
 import UserProfileBar from "../../src/components/UserProfileBar"
 import UserProfileFriends from "../../src/components/UserProfileFriends"
-import UserProfileRecents from "../../src/components/UserProfileRecents"
 import PostItem from "../../src/components/PostItem"
 import Feed from "../../public/img/icons/feed.svg"
 import Friends from "../../public/img/icons/friends.svg"
@@ -26,7 +25,6 @@ const index = ({ postItems }) => {
               Your Friends
             </h3>
             <UserProfileFriends />
-            <UserProfileRecents />
           </div>
         </div>
       </div>
