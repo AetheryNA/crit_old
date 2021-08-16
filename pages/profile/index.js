@@ -4,8 +4,20 @@ import UserProfileFriends from "../../src/components/UserProfileFriends"
 import PostItem from "../../src/components/PostItem"
 import Feed from "../../public/img/icons/feed.svg"
 import Friends from "../../public/img/icons/friends.svg"
+import Loading from "../../src/components/Loading"
+import axios from "axios"
+import { useState, useEffect } from "react"
 
-const index = ({ postItems }) => {
+const index = () => {
+  const [postItems, setPostItems] = useState()
+
+  useEffect(() => {
+    axios.get('api/getCurrentUserPosts')
+      .then(response => {
+        setPostItems(response.data)
+      })
+  })
+
   return (
     <>
       <UserBanner />
@@ -17,7 +29,11 @@ const index = ({ postItems }) => {
               <Feed />
               Your Feed
             </h3>
-            <PostItem postItems={postItems}/>
+            { postItems ? 
+              <PostItem postItems={postItems}/>
+              : 
+              <Loading type="feed data"/>
+            }
           </div>
           <div className="dashboard-right">
             <h3 className="flex flex-row">
@@ -30,17 +46,6 @@ const index = ({ postItems }) => {
       </div>
     </>
   )
-}
-
-export const getStaticProps = async() => {
-  const res = await fetch('http://localhost:3000/api/getAllPosts')
-  const postItems = await res.json()
-
-  return {
-    props: {
-      postItems
-    }
-  }
 }
 
 export default index
