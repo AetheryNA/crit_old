@@ -38,9 +38,11 @@
     }
 
     .dashboard-right {
+      margin-bottom: 40px;
       order: 1;
 
       @include tablet {
+        margin-bottom: 0;
         order: 2;
       }
     }
