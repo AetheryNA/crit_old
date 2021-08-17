@@ -7,30 +7,31 @@ import Feed from "../../../public/img/icons/feed.svg"
 import Friends from "../../../public/img/icons/friends.svg"
 import useUser from '../../../lib/auth/useUser'
 
-const userProfile = ({ userData }) => {
+const userProfile = ({ userPosts }) => {
   const { user } = useUser()
+  const userPost = userPosts.users[0]
 
   return (
     <>
       <Head>
-        <title> CRIT | { user && ( userData.username === user.username ? "Me" : userData.username)} </title>
+        <title> CRIT | { user && ( userPost.username === user.username ? "Me" : userPost.username)} </title>
       </Head>
 
       <UserBanner />
       <div className="profile-pg">
-        <UserProfileBar currentUser={userData && (userData)}/>
+        <UserProfileBar currentUser={userPosts && (userPosts.users)}/>
         <div className="profile-pg__dashboard flex lg:flex-row flex-col">
           <div className="dashboard-left">
             <h3 className="flex flex-row">
               <Feed />
-              { user && (userData.id === user.id ? "Your Feed" : "Their Feed")}
+              { user && (userPost.id === user.id ? "Your Feed" : "Their Feed")}
             </h3>
-            <PostItem postItems={userData && (userData.posts)}/>
+            <PostItem postItems={userPosts && (userPost.posts)}/>
           </div>
           <div className="dashboard-right">
             <h3 className="flex flex-row">
               <Friends />
-              { user && (userData.id === user.id ? "Your Friends" : "Their Friends")}
+              { user && (userPost.id === user.id ? "Your Friends" : "Their Friends")}
             </h3>
             <UserProfileFriends />
           </div>
@@ -46,7 +47,7 @@ export const getServerSideProps = async(context) => {
 
   return {
     props : {
-      userData,
+      userPosts,
       fallback: false
     }
   }
