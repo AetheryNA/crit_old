@@ -8,8 +8,6 @@ const PostItem = ({ postItems }) => {
   const postedItem = postState.map((post, index) => {
     const userData = post.author
 
-    console.log(post);
-
     return(
       <Link href={`/post/${post.post_id}`} key={index}>
         <article className="post-item flex flex-col">
