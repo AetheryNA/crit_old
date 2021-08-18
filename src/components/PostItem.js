@@ -11,7 +11,7 @@ const PostItem = ({ postItems }) => {
       <div className="post-item" key={index}>
         <div className="post-item__profile flex items-center overflow-hidden">
           <img
-            className="h-8 w-8 rounded-full"
+            className="h-8 w-8 rounded-full object-cover"
             src={userData.avatar_url === '' ? "/img/pfp.png" : `/${userData.avatar_url}`}
           />
           <a className="ml-3"> {userData.username} </a>

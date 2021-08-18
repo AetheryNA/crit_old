@@ -23,6 +23,8 @@ const SettingsProfileEdit = ({ userDetails }) => {
       headers: {"Content-type" : "application/json"}
     }).then(() => {
       setUpdatedNotification('Settings updated')
+
+      setTimeout(location.reload(), 5000)
     })
   }
 

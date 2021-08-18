@@ -31,6 +31,10 @@ const handler = nc()
       console.log(err);
     })
 
+    req.session.set('user', {
+      avatar_url: newFilePath,
+    })
+
     return res.json({
       message : 'Avatar updated'
     })

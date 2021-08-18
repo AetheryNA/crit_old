@@ -1,23 +1,31 @@
-import { useState } from "react"
-import Image from 'next/image'
+import axios from "axios"
+import { useEffect, useState } from "react"
 import useUser from '../../lib/auth/useUser'
 
 const ProfileStatus = () => {
   const { user } = useUser()
   const [statusTabActive, setstatusTabActive] = useState("false")
+  const [ userData, setUserData ] = useState()
 
   const handleStatusTab = () => {
     setstatusTabActive(!statusTabActive)
   }
 
+  useEffect(() => {
+    axios.get(`/api/getUserPosts?user_id=${user.id}`)
+      .then(res => {
+        setUserData(res.data.users[0])
+      })
+  }, [])
+
   return (
     <>
       <div className="profile">
         <div className={`profile__picture ${statusTabActive ? "" : "active"}`} onClick={() => { handleStatusTab() }}>
-          { user && (
-            user.avatar_url ?
+          { userData && (
+            userData.avatar_url ?
               <img
-                src={`/${user.avatar_url}`}
+                src={`/${userData.avatar_url}`}
               />
               :
               <img
