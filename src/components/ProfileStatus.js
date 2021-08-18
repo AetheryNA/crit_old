@@ -10,15 +10,22 @@ const ProfileStatus = () => {
     setstatusTabActive(!statusTabActive)
   }
 
+  console.log(user);
+
   return (
     <>
       <div className="profile">
         <div className={`profile__picture ${statusTabActive ? "" : "active"}`} onClick={() => { handleStatusTab() }}>
-          <Image
-            src="/img/pfp.png"
-            width={80}
-            height={80}
-          />
+          { user && (
+            user.avatar_url ?
+              <img
+                src={`/${user.avatar_url}`}
+              />
+              :
+              <img
+                src="/img/pfp.png"
+              />
+          )}
 
           <div className="status"></div>
           <ul className="status__tab">
