@@ -10,8 +10,6 @@ const ProfileStatus = () => {
     setstatusTabActive(!statusTabActive)
   }
 
-  console.log(user);
-
   return (
     <>
       <div className="profile">

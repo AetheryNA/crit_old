@@ -10,21 +10,11 @@ const SettingsProfileEdit = ({ userDetails }) => {
   const [pfpImage, setPfpImage] = useState()
   const [updatedNotification, setUpdatedNotification] = useState()
 
-  console.log(details);
-
   const updateProfile = async(e) => {
     e.preventDefault()
 
     const updatedSettingsData = new FormData()
     updatedSettingsData.append('file', pfpImage)
-
-    console.log(updatedSettingsData.get('file'));
-
-    // axios.put('/api/changeProfilePicture', { data : updatedSettingsData }, {params : { user_id : user.id}})
-    //   .then(() => {
-    //     setUpdatedNotification('Settings Updated')
-    //   })
-    console.log(updatedSettingsData);
 
     axios({
       method: 'POST',
