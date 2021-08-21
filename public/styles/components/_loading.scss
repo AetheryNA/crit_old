@@ -1,0 +1,10 @@
+.loading {
+  display: flex;
+  flex-direction: row;
+
+  p {
+    font-family: $raleway;
+    text-transform: uppercase;
+    font-weight: $semi-bold;
+  }
+}

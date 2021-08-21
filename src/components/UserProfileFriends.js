@@ -1,7 +1,7 @@
 const UserProfileFriends = () => {
   return (
     <div className="user-profile-friends">
-      <div className="user-profile-friends__friend flex flex-row justify-between">
+      <div className="user-profile-friends__friend flex flex-row">
         <a href="/" className="flex flex-row items-center">
           <img 
             src="img/pfp.png" 
