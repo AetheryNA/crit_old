@@ -1,16 +1,9 @@
 import prisma from "../../lib/adapters/prismaClient";
 import withSession from '../../lib/auth/session'
 import nc from 'next-connect'
-import multer from 'multer'
+import sendToServer from '../../src/helpers/sendToServer'
 
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: './public/uploads/profile-pictures',
-    filename: (req, file, cb) => cb(null, file.originalname),
-  })
-})
-
-const fileUpload = upload.single('file')
+const fileUpload = sendToServer('./public/uploads/profile-pictures').single('file')
 
 const handler = nc()
   .use(withSession)
