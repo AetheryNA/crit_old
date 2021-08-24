@@ -1,9 +1,7 @@
-import useUser from "../../lib/auth/useUser"
 import UserProfileSettings from "../../src/components/UserProfileSettings"
+import UserProfileAddFriend from "./UserProfileAddFriend"
 
-const UserProfileBar = ({ currentUser }) => {
-  const { user } = useUser()
-
+const UserProfileBar = ({ loggedUser, currentUser, friends }) => {
   return (
     <>
     <div className="user-profile-bar flex flex-row items-center">
@@ -20,7 +18,7 @@ const UserProfileBar = ({ currentUser }) => {
         <h3> { currentUser || !currentUser === '' ? currentUser.username : 'Not found'} </h3>
       </div>
 
-      { user && (currentUser.id === user.id ? <UserProfileSettings currentUser={currentUser} /> : '')}
+      { loggedUser && (currentUser[0].id === loggedUser.id ? <UserProfileSettings /> : ( loggedUser.id == friends.getFriends[0].user_id ? "" : <UserProfileAddFriend />))}
 
     </div>
     </>
