@@ -47,6 +47,23 @@
     }
   }
 
+  &__social-status {
+    height: 30px;
+  }
+
+  &__share {
+    svg {
+      color: $white;
+      transition: $basic-transition;
+    }
+
+    &:hover {
+      svg {
+        color: $dark-orange;
+      }
+    }
+  }
+
   &__svg {
     cursor: pointer;
     transition: $basic-transition;
