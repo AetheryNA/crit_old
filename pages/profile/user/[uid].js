@@ -7,31 +7,31 @@ import Feed from "../../../public/img/icons/feed.svg"
 import Friends from "../../../public/img/icons/friends.svg"
 import useUser from '../../../lib/auth/useUser'
 
-const userProfile = ({ userPosts }) => {
+const userProfile = ({ fetchedUserData }) => {
   const { user } = useUser()
-  const userPost = userPosts.users[0]
+  const userData = fetchedUserData.users
 
   return (
     <>
       <Head>
-        <title> CRIT | { user && ( userPost.username === user.username ? "Me" : userPost.username)} </title>
+        <title> CRIT | { user && ( userData.username === user.username ? "Me" : userData.username)} </title>
       </Head>
 
       <UserBanner />
       <div className="profile-pg">
-        <UserProfileBar currentUser={userPosts && (userPosts.users)}/>
+        <UserProfileBar currentUser={fetchedUserData && (userData)}/>
         <div className="profile-pg__dashboard flex lg:flex-row flex-col">
           <div className="dashboard-left">
             <h3 className="flex flex-row">
               <Feed />
-              { user && (userPost.id === user.id ? "Your Feed" : "Their Feed")}
+              { user && (userData.id === user.id ? "Your Feed" : "Their Feed")}
             </h3>
-            <PostItem postItems={userPosts && (userPost.posts)}/>
+            <PostItem postItems={fetchedUserData && (userData.posts)}/>
           </div>
           <div className="dashboard-right">
             <h3 className="flex flex-row">
               <Friends />
-              { user && (userPost.id === user.id ? "Your Friends" : "Their Friends")}
+              { user && (userData.id === user.id ? "Your Friends" : "Their Friends")}
             </h3>
             <UserProfileFriends />
           </div>
@@ -42,12 +42,12 @@ const userProfile = ({ userPosts }) => {
 }
 
 export const getServerSideProps = async(context) => {
-  const res = await fetch(`http://localhost:3000/api/getUserPosts?user_id=${context.params.uid}`)
-  const userPosts = await res.json()
+  const res = await fetch(`http://localhost:3000/api/getUser?user_id=${context.params.uid}`)
+  const fetchedUserData = await res.json()
 
   return {
     props : {
-      userPosts,
+      fetchedUserData,
       fallback: false
     }
   }

@@ -12,9 +12,9 @@ const ProfileStatus = () => {
   }
 
   useEffect(() => {
-    axios.get(`/api/getUserPosts?user_id=${user.id}`)
+    axios.get(`/api/getUser?user_id=${user.id}`)
       .then(res => {
-        setUserData(res.data.users[0])
+        setUserData(res.data.users)
       })
   }, [])
 

@@ -5,7 +5,11 @@ const handler = nc()
   .get(async(req, res) => {
     const data = req.query
 
-    const users = await prisma.users.findMany({
+    const users = await prisma.users.findUnique({
+      where : {
+        id : parseInt(data.user_id)
+      },
+
       include : {
         posts : {
           select : {
@@ -17,9 +21,6 @@ const handler = nc()
           }
         }
       },
-      where : {
-        id : parseInt(data.user_id)
-      }
     })
 
     return res.json({
