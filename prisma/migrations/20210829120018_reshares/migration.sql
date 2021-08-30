@@ -5,7 +5,7 @@
 
 */
 -- AlterTable
-ALTER TABLE "posts" ADD COLUMN     "reshare" INTEGER NOT NULL;
+ALTER TABLE "posts" ADD COLUMN "reshare" INTEGER NOT NULL;
 
 -- CreateTable
 CREATE TABLE "shares" (
