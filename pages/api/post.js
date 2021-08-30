@@ -27,6 +27,7 @@ const handler = nc()
     const postingData = {
       content: data.content,
       like_count: parseInt(data.like_count),
+      reshare: parseInt(data.reshare)
     }
 
     const user = req.session.get('user')
@@ -36,6 +37,8 @@ const handler = nc()
     const newPost = new Post(postData)
 
     await newPost.createPost().catch((err) => {
+      console.log(err);
+
       return res
         .status(400)
         .json({

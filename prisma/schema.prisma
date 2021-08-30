@@ -16,6 +16,7 @@ model users {
   posts    posts[]
   usersRelationships_users UsersRelationships[] @relation("userList")
   usersRelationships_friends UsersRelationships[] @relation("friendList")
+  shares   shares[]
 }
 
 model posts {
@@ -26,7 +27,9 @@ model posts {
   content String
   like_count Int
   created_at DateTime @default(now())
-  updated_at DateTime @updatedAt 
+  updated_at DateTime @updatedAt
+  shares shares[]
+  reshare Int 
 }
 
 model UsersRelationships {
@@ -38,6 +41,14 @@ model UsersRelationships {
   type Friend_Type @default(FRIEND)
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt 
+}
+
+model shares {
+  id Int @id @default(autoincrement())
+  user users @relation(fields: [user_id], references: [id])
+  user_id Int
+  post posts @relation(fields: [post_id], references: [post_id])
+  post_id Int
 }
 
 enum Friend_Type {

@@ -1,15 +1,23 @@
-import { useState } from 'react'
 import Like from '../../public/img/icons/like.svg'
 import Link from 'next/link'
 import { TwitterShareButton, FacebookShareButton, TwitterIcon, FacebookIcon } from 'react-share'
+import axios from 'axios'
 
-const PostItem = ({ postItems }) => {
-  const [postState, setPostState] = useState(postItems)
-
+const PostItem = ({ postItems, user }) => {
   const shareContent = "Posted something cool, check it out!"
 
-  const postedItem = postState.map((post, index) => {
+  const postedItem = postItems.map((post, index) => {
     const userData = post.author
+
+    const currentPostData = {
+      user_id : user.id,
+      post_id : post.post_id,
+    }
+
+    const addToShareCount = async() => {
+      axios
+        .post(`${process.env.BASE_URL}/api/addToReshare`, currentPostData)
+    }
 
     return(
       <Link href={`/post/${post.post_id}`} key={index}>
@@ -38,13 +46,13 @@ const PostItem = ({ postItems }) => {
             <div className="post-item__social-status flex justify-between mt-6">
               <div className="post-item__social flex flex-row">
                 <div className="post-item__share">
-                  <TwitterShareButton title={shareContent} url={`${process.env.BASE_URL}/post/${post.post_id}`}>
+                  <TwitterShareButton title={shareContent} url={`${process.env.BASE_URL}/post/${post.post_id}`} beforeOnClick={addToShareCount}>
                     <TwitterIcon size={30} bgStyle={{ fill: 'none'}} iconFillColor='currentColor' />
                   </TwitterShareButton>
                 </div>
                 
                 <div className="post-item__share">
-                  <FacebookShareButton title={shareContent} url={`${process.env.BASE_URL}/post/${post.post_id}`}>
+                  <FacebookShareButton title={shareContent} url={`${process.env.BASE_URL}/post/${post.post_id}`} beforeOnClick={addToShareCount}>
                     <FacebookIcon size={30} bgStyle={{ fill: 'none'}} iconFillColor='currentColor' />
                   </FacebookShareButton>
                 </div>

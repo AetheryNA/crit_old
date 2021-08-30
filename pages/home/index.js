@@ -5,19 +5,19 @@ import HomeFriends from '../../src/components/HomeFriends'
 import AdvertisementBlock from '../../src/components/AdvertisementBlock'
 import { withSessionSSR } from '../../lib/auth/session'
 
-const index = ({ getPosts, getAllFriends }) => {
+const index = ({ getPosts, getAllFriends, user }) => {
   return (
     <>
       <div className="dashboard-left">
         <InnerdashboardHeader title={'Recent Activity'} iconHome={true}/>
-        <PostItem postItems={getPosts} />
+        <PostItem postItems={getPosts} user={user}/>
       </div>
       <div className="dashboard-right">
         <TopCards />
 
         <div className="dashboard-right__home-section">
           <InnerdashboardHeader title={'Your friends'} iconFriends={true}/>
-          <HomeFriends friends={getAllFriends.getFriends}/>
+          { !getAllFriends.getFriends.length > 0 ? <p> Couldn't find any friends, try adding a few? </p> : <HomeFriends friends={getAllFriends.getFriends}/>}
         </div>
         
         <div className="dashboard-right__home-section">
@@ -53,6 +53,7 @@ export const getServerSideProps = withSessionSSR(async function ({ req, res }) {
     props: { 
       getPosts,
       getAllFriends,
+      user,
     },
   }
 })

@@ -11,6 +11,7 @@ const PostDropdown = () => {
   newImageForm.append('file', image)
   newImageForm.append('content', content)
   newImageForm.append('like_count', 0)
+  newImageForm.append('reshare', 0)
 
   const createPost = async(e) => {
     e.preventDefault()
