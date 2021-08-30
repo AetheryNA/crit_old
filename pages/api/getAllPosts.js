@@ -16,9 +16,7 @@ const handler = nc()
       })
     })
 
-    return res.json({
-      findPosts
-    })
+    return res.json(findPosts)
   })
 
 export default handler

@@ -23,9 +23,7 @@ const handler = nc()
       },
     })
 
-    return res.json({
-      users
-    })
+    return res.json(users)
   })
 
 
