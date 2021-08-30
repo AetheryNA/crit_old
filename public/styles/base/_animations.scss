@@ -47,3 +47,21 @@ $basic-transition : 0.3s ease;
     opacity: 1;
   }
 }
+
+@keyframes iconPop {
+  0% {
+    transform: translateY(0)
+  }
+
+  20% {
+    transform: translateY(-5px)
+  }
+
+  40% {
+    transform: translateY(0)
+  }
+
+  100% {
+    transform: translateY(0)
+  }
+}

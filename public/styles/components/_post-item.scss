@@ -86,6 +86,7 @@
 
     &.active {
       svg {
+        animation: iconPop 2s;
         color: $dark-orange;
       }
     }

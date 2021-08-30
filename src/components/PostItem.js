@@ -1,17 +1,26 @@
 import Like from '../../public/img/icons/like.svg'
 import Link from 'next/link'
 import { TwitterShareButton, FacebookShareButton, TwitterIcon, FacebookIcon } from 'react-share'
+import { useState } from 'react'
 import axios from 'axios'
 
 const PostItem = ({ postItems, user }) => {
   const shareContent = "Posted something cool, check it out!"
 
   const postedItem = postItems.map((post, index) => {
+    const [isActive, setIsActive] = useState(false)
+
     const userData = post.author
 
     const currentPostData = {
       user_id : user.id,
       post_id : post.post_id,
+    }
+
+    const likeOnClick = (e) => {
+      e.preventDefault()
+
+      setIsActive(!isActive)
     }
 
     const addToShareCount = async() => {
@@ -58,7 +67,7 @@ const PostItem = ({ postItems, user }) => {
                 </div>
               </div>
 
-              <div className="post-item__svg">
+              <div className={`post-item__svg ${isActive ? 'active' : ''}`} onClick={likeOnClick}>
                 <Like />
               </div>
             </div>
