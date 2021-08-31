@@ -17,6 +17,7 @@ model users {
   usersRelationships_users UsersRelationships[] @relation("userList")
   usersRelationships_friends UsersRelationships[] @relation("friendList")
   shares   shares[]
+  likes    likes[]
 }
 
 model posts {
@@ -30,6 +31,7 @@ model posts {
   updated_at DateTime @updatedAt
   shares shares[]
   reshare Int 
+  likes likes[]
 }
 
 model UsersRelationships {
@@ -49,6 +51,15 @@ model shares {
   user_id Int
   post posts @relation(fields: [post_id], references: [post_id])
   post_id Int
+}
+
+model likes {
+  id Int @id @default(autoincrement())
+  user users @relation(fields: [user_id], references: [id])
+  user_id Int
+  post posts @relation(fields: [post_id], references: [post_id])
+  post_id Int
+  isLiked Boolean @default(false)
 }
 
 enum Friend_Type {
