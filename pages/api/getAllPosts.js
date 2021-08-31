@@ -7,7 +7,8 @@ const handler = nc()
   .get(async(req, res) => {
     const findPosts = await prisma.posts.findMany({
       include : {
-        author: true
+        author: true,
+        likes: true,
       }
     }).catch((err) => {
       res.json({
