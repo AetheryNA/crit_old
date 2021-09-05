@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useChannel } from "./AblyHook"
 
-const AblyChat = ({loggedUser}) => {
+const AblyChat = ({ loggedUser, lobbyName }) => {
   let inputBox = null;
   let messageEnd = null;
 
@@ -9,7 +9,7 @@ const AblyChat = ({loggedUser}) => {
   const [receivedMessages, setMessages] = useState([]);
   const messageTextIsEmpty = messageText.trim().length === 0;
 
-  const [channel, ably] = useChannel("chat-demo", (message) => {
+  const [channel, ably] = useChannel(lobbyName, (message) => {
     const history = receivedMessages.slice(-199);
     setMessages([...history, message]);
   });

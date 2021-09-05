@@ -1,4 +1,14 @@
 .lobbies {
+  &__lobby {
+    cursor: pointer;
+    
+    &:hover {
+      h3 {
+        color: $dark-orange;
+      }
+    }
+  }
+  
   &__info {
     img {
       margin-right: 10px;
@@ -16,6 +26,7 @@
     h3 {
       font-size: 1.1rem;
       font-weight: $semi-bold;
+      transition: $basic-transition;
     }
   }
 }

@@ -7,6 +7,7 @@ import Tag from '../../public/img/icons/tag.svg'
 import Friends from '../../public/img/icons/friends.svg'
 import Clock from '../../public/img/icons/clock.svg'
 import AddPost from './AddPost'
+import CreateLobby from './CreateLobby'
 
 const InnerdashboardHeader = ({ router, iconHome, iconActivity, iconTrending, iconFriends, iconLobby, title }) => {
   const [svgHome, setSvgHome] = useState(iconHome)
@@ -28,6 +29,12 @@ const InnerdashboardHeader = ({ router, iconHome, iconActivity, iconTrending, ic
 
       { dashboardHeaderTitle(router) === 'activity feed' ?
         <AddPost /> 
+        :
+        null
+      }
+
+      { dashboardHeaderTitle(router) === 'lobby' ? 
+        <CreateLobby /> 
         :
         null
       }
