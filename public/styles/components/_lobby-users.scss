@@ -1,0 +1,54 @@
+.lobby-users {
+  width: 100%;
+
+  &__user {
+    margin-bottom: 10px;
+    padding: 5px 20px;
+    background-color: $black-v2;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    img {
+      margin-right: 10px;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+  
+      @include tablet {
+        margin-right: 15px;
+        height: 40px;
+        width: 40px;
+      }
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: $semi-bold;
+    }
+  }
+
+  &__state {
+    h3 {
+      margin-right: 15px;
+      color: $grey;
+      font-size: 1.1rem;
+      font-weight: $regular;
+      font-family: $roboto;
+    }
+  }
+
+  &__circle {
+    background-color: $white;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+
+    &.ready {
+      background-color: $orange;
+    }
+  }
+}

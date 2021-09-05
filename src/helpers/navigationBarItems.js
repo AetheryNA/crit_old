@@ -44,7 +44,7 @@ const navigationItems = [
   {
     name: 'Lobby',
     className: 'aside__nav-item',
-    href: '/',
+    href: '/lobby',
     svg: <ClockSVG />,
     isActive: false,
   },
