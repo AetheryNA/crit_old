@@ -5,12 +5,10 @@ const handler = nc()
   .get(async(req, res) => {
     const query = req.query
 
-    if (query._limit === undefined) {
-      query._limit = 1000
-    }
+    const limit = query._limit || 1000
 
     const users = await prisma.users.findMany({
-      take : parseInt(query._limit),
+      take : parseInt(limit),
       include : {
         posts : {
           select : {
