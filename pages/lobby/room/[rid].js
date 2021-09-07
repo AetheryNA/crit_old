@@ -8,6 +8,7 @@ import { withSessionSSR } from "../../../lib/auth/session"
 const AblyChatComponent = dynamic(() => import('../../../src/components/ablyComponents/AblyChat'), { ssr: false });
 
 const index = ({ user, currentLobby }) => {
+
   return (
     <>
       <Head>
@@ -19,7 +20,7 @@ const index = ({ user, currentLobby }) => {
         <div className="flex flex-row">
           <div className="dashboard-left flex flex-col mt-8">
             <div className="flex flex-row">
-              <LobbyUsers loggedUser={user} joinedUsers={currentLobby.joined_users}/>
+              <LobbyUsers joinedUsers={currentLobby.joined_users} currentLobby={currentLobby} loggedUser={user}/>
               <LobbyGameSelect />
             </div>
             <AblyChatComponent loggedUser={user} lobbyName={currentLobby.lobby_name}/>

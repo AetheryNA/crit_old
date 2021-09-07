@@ -8,6 +8,9 @@ const handler = nc()
     const findCurrentLobby = await prisma.lobby.findUnique({
       where : {
         lobby_id : parseInt(query.lobby_id)
+      },
+      include : {
+        user : true,
       }
     })
 

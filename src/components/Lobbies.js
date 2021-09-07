@@ -1,9 +1,23 @@
-import Link from 'next/link'
+import axios from "axios"
 
-const Lobbies = ({ lobbies }) => {
+const Lobbies = ({ lobbies, loggedUser }) => {
   const allLobbies = lobbies.map((lobby, index) => {
+    const joinLobby = async() => {
+      if (loggedUser.id !== lobby.owner_id) {
+        axios
+          .post(`${process.env.BASE_URL}/api/joinLobby`, {
+            lobby_id : lobby.lobby_id,
+            user_id : loggedUser.id,
+          })
+          .catch(err => console.log(err))
+          .then(() => { console.log(`Joined ${lobby.lobby_name}`) })
+      }
+      
+      return
+    }
+
     return (
-      <Link href={`/lobby/room/${lobby.lobby_id}`} key={index}>
+      <a href={`/lobby/room/${lobby.lobby_id}`} key={index} onClick={joinLobby}>
         <div className="lobbies__lobby flex flex-row items-center">
           <div className="lobbies__info flex flex-row items-center">
             <img src="/img/critLogoph.svg" alt="" />
@@ -16,7 +30,7 @@ const Lobbies = ({ lobbies }) => {
             <p> {lobby.user.id == lobby.owner_id && (lobby.user.username)} </p>
           </div>
         </div>
-      </Link>
+      </a>
     )
   })
 

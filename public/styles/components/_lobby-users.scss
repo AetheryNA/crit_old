@@ -29,6 +29,13 @@
       font-size: 1.1rem;
       font-weight: $semi-bold;
     }
+
+    button {
+      margin-left: 10px;
+      color: $red;
+      height: 17px;
+      width: 17px;
+    }
   }
 
   &__state {

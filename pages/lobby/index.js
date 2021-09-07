@@ -2,12 +2,12 @@ import InnerdashboardHeader from '../../src/components/InnerdashboardHeader'
 import Lobbies from '../../src/components/Lobbies'
 import { withSessionSSR } from '../../lib/auth/session'
 
-const index = ({ allLobbies }) => {
+const index = ({ allLobbies, user }) => {
   return (
     <>
       <div className="dashboard-left">
         <InnerdashboardHeader iconLobby={true} />
-        <Lobbies lobbies={allLobbies}/>
+        <Lobbies lobbies={allLobbies} loggedUser={user} />
       </div>
     </>
   )
