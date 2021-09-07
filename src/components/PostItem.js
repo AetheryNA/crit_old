@@ -71,7 +71,7 @@ const PostItem = ({ postItems, user }) => {
           <div className="post-item__profile flex items-center overflow-hidden">
             <img
               className="h-8 w-8 rounded-full"
-              src={userData.avatar_url === '' ? "/img/pfp.png" : userData.avatar_url}
+              src={`/${userData.avatar_url}`}
             />
             <Link href={`/profile/user/${userData.id}`}>
               <a className="ml-3 z-50" href={`/profile/user/${userData.id}`}> {userData.username} </a>
