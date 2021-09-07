@@ -36,7 +36,7 @@ const handler = nc()
         likes: true,
       },
       orderBy : {
-        post_id : "asc"
+        total_social_count : "desc"
       }
     })
 
