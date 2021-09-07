@@ -17,9 +17,9 @@ const index = ({ postItems, user }) => {
 export const getServerSideProps = withSessionSSR(async ({req, res}) => {
   const user = req.session.get('user')
 
-  const response = await fetch('http://localhost:3000/api/getAllPosts')
+  const response = await fetch('http://localhost:3000/api/trending')
   const items = await response.json()
-  const postItems = items.findPosts
+  const postItems = items
 
   return {
     props : {
