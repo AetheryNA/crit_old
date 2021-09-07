@@ -5,16 +5,32 @@ import { withSession } from '../../lib/auth/session'
 const handler = nc()
   .use(withSession)
   .post(async (req, res) => {
-    await prisma.lobby.update({
+    const lobbyId = parseInt(req.body.lobby_id)
+    const userId = parseInt(req.body.user_id)
+
+    const joinedUsers = await prisma.lobby.findUnique({
       where : {
-        lobby_id : parseInt(req.body.lobby_id)
+        lobby_id : lobbyId
       },
-      data : {
-        joined_users : {
-          push : parseInt(req.body.user_id)
-        }
+      select : {
+        joined_users : true
       }
     })
+
+    if (joinedUsers.joined_users.includes(userId)) {
+      res.end()
+    } else {
+      await prisma.lobby.update({
+        where : {
+          lobby_id : lobbyId
+        },
+        data : {
+          joined_users : {
+            push : userId
+          }
+        }
+      }) 
+    }
 
     return res.json({
       message: "Joined lobby"
