@@ -1,11 +1,14 @@
 import axios from "axios"
 import { useState } from "react"
+import { useRouter } from "next/router"
 
 const PostDropdown = () => {
   const [content, setContent] = useState()
   const [image, setImage] = useState()
   const [contentError, setContentError] = useState()
   const [posted, setPosted] = useState()
+
+  const router = useRouter()
 
   const newImageForm = new FormData()
   newImageForm.append('file', image)
@@ -27,6 +30,7 @@ const PostDropdown = () => {
         headers: {"Content-type" : "application/json"}
       }).then(() => {
         setPosted('Posted!')
+        router.reload()
       }).catch((err) => {
         console.log("Something went wrong", err);
       })
