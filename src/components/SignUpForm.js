@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import httpClient from "../../lib/adapters/httpClient"
 import { useRouter } from 'next/router'
 

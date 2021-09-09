@@ -1,0 +1,22 @@
+.lobby-quiz-prompt {
+  margin-left: 10%;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: $semi-dark-grey;
+  max-width: 300px;
+
+  &__button {
+    margin-top: 15px;
+    border-radius: 5px;
+    color: $white;
+    display: flex;
+    font-weight: $semi-bold;
+    justify-content: center;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: $dark-orange;
+      color: $white;
+    }
+  }
+}
