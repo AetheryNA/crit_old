@@ -25,7 +25,7 @@ const handler = nc()
 
     await prisma.users.update({
       where : {
-        id: 1
+        id: data.user_id
       },
       data : {
         personality_weight: personality_Weight,

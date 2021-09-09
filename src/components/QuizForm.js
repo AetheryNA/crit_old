@@ -5,7 +5,7 @@ import axios from 'axios';
 import questions from '../helpers/quizQuestions';
 import QuizCompleteModel from './QuizCompleteModel';
 
-const QuizForm = () => {
+const QuizForm = ({ loggedUser }) => {
   const [q1, setq1] = useState()
   const [q2, setq2] = useState()
   const [q3, setq3] = useState()
@@ -16,11 +16,10 @@ const QuizForm = () => {
 
   const submitResults = async(e) => {
     e.preventDefault()
-
-    console.log(q1, q2, q3);
     
     if (q1, q2, q3) {
       const data = {
+        user_id : loggedUser.id,
         q1 : q1,
         q2 : q2,
         q3 : q3,

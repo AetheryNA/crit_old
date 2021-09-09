@@ -8,16 +8,22 @@
       }
     }
   }
+
+  &__image {
+    margin-right: 10px;
+
+    @include tablet {
+      margin-right: 15px;
+    }
+  }
   
   &__info {
     img {
-      margin-right: 10px;
       border-radius: 50%;
       height: 30px;
       width: 30px;
   
       @include tablet {
-        margin-right: 15px;
         height: 40px;
         width: 40px;
       }
