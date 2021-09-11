@@ -14,7 +14,7 @@ const ProfileStatus = () => {
   useEffect(() => {
     axios.get(`/api/getUser?user_id=${user.id}`)
       .then(res => {
-        setUserData(res.data.users)
+        setUserData(res.data)
       })
   }, [])
 

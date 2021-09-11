@@ -5,7 +5,7 @@ import Settings from '../../public/img/icons/settings.svg'
 import useUser from '../../lib/auth/useUser'
 
 const SettingsProfileEdit = ({ userDetails }) => {
-  const details = userDetails[0]
+  const details = userDetails
   const { user } = useUser() 
   const [pfpImage, setPfpImage] = useState()
   const [updatedNotification, setUpdatedNotification] = useState()
