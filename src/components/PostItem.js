@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import Like from '../../public/img/icons/like.svg'
 import Link from 'next/link'
+import { TwitterShareButton, FacebookShareButton, TwitterIcon, FacebookIcon } from 'react-share'
 
 const PostItem = ({ postItems }) => {
   const [postState, setPostState] = useState(postItems)
+
+  const shareContent = "Posted something cool, check it out!"
 
   const postedItem = postState.map((post, index) => {
     const userData = post.author
@@ -32,7 +35,21 @@ const PostItem = ({ postItems }) => {
             <p>
               {post.content}
             </p>
-            <div className="post-item__social-status flex justify-end mt-6">
+            <div className="post-item__social-status flex justify-between mt-6">
+              <div className="post-item__social flex flex-row">
+                <div className="post-item__share">
+                  <TwitterShareButton title={shareContent} url={`${process.env.BASE_URL}/post/${post.post_id}`}>
+                    <TwitterIcon size={30} bgStyle={{ fill: 'none'}} iconFillColor='currentColor' />
+                  </TwitterShareButton>
+                </div>
+                
+                <div className="post-item__share">
+                  <FacebookShareButton title={shareContent} url={`${process.env.BASE_URL}/post/${post.post_id}`}>
+                    <FacebookIcon size={30} bgStyle={{ fill: 'none'}} iconFillColor='currentColor' />
+                  </FacebookShareButton>
+                </div>
+              </div>
+
               <div className="post-item__svg">
                 <Like />
               </div>

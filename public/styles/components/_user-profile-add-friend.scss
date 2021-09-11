@@ -16,6 +16,11 @@
       color: $black-grey;
       fill: $white;
       transition: $basic-transition;
+      width: 16px;
+
+      @include tablet {
+        width: 25px;
+      }
     }
 
     &:hover {
