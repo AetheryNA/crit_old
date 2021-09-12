@@ -1,0 +1,39 @@
+.lobby-inner-header {
+  margin-left: auto;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  font-family: $raleway;
+  text-transform: uppercase;
+
+  &:hover {
+    span {
+      color: $dark-orange;
+    }
+  }
+
+  svg {
+    margin-right: 0;
+    margin-left: 10px;
+    transition: 0.5s ease;
+    width: 20px;
+  }
+
+  span {
+    color: $grey;
+    display: none;
+    transition: $basic-transition;
+    font-weight: $semi-bold;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &.active {
+    svg {
+      transform: rotate(45deg);
+    }
+  }
+}

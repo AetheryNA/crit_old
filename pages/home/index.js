@@ -37,6 +37,14 @@ const index = ({ getPosts, getAllFriends, user }) => {
 export const getServerSideProps = withSessionSSR(async function ({ req, res }) {
   const user = req.session.get('user')
 
+  if (!user) {
+    return {
+      redirect : {
+        destination : '/login'
+      }
+    }
+  }
+
   const [getAllPostsRes, getAllFriendsRes] = await Promise.all([
     fetch(`http://localhost:3000/api/getUserPosts?user_id=${user.id}&_limit=5`),
     fetch(`http://localhost:3000/api/getFriends?user_id=${user.id}`),

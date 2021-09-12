@@ -1,0 +1,42 @@
+.lobby-game-select {
+  margin-left: 20px;
+  padding: 20px;
+  background-color: $black-v2;
+  max-height: 385px;
+  width: 40%;
+
+  &__heading {
+    font-size: 1.1rem;
+    font-weight: $semi-bold;
+    line-height: 1.5;
+  }
+
+  &__current-game {
+    cursor: pointer;
+    position: relative;
+    transition: $basic-transition;
+
+    &:hover {
+      svg {
+        transform: scale(1.03);
+      }
+    }
+
+    img {
+      margin-top: 10px;
+      object-fit: cover;
+      width: 100%;
+    }
+    
+    svg {
+      color: $black-grey;
+      fill: $white;
+      height: 30px;
+      position: absolute;
+      right: -8px;
+      top: 0;
+      transition: $basic-transition;
+      width: 30px;
+    }
+  }
+}

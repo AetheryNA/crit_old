@@ -1,0 +1,26 @@
+.create-lobby-model {
+  background-color: $semi-dark-grey;
+
+  input,
+  button {
+    color: $white;
+  }
+
+  input{
+    background-color: rgba($color: $white, $alpha: .02);
+    outline: $orange;
+    height: 35px;
+
+    &:focus {
+      outline: 2px solid $orange;
+    }
+  }
+
+  button {
+    text-transform: uppercase;
+  }
+
+  &__error {
+    color: $orange;
+  }
+}
