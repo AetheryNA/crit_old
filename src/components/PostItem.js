@@ -1,12 +1,14 @@
 import Like from '../../public/img/icons/like.svg'
 import Link from 'next/link'
 import { TwitterShareButton, FacebookShareButton, TwitterIcon, FacebookIcon } from 'react-share'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const PostItem = ({ postItems, user }) => {
   const shareContent = "Posted something cool, check it out!"
 
   const postedItem = postItems.map((post, index) => {
+    const [isActive, setIsActive] = useState(false)
     const userData = post.author
 
     const currentPostData = {
@@ -14,10 +16,54 @@ const PostItem = ({ postItems, user }) => {
       post_id : post.post_id,
     }
 
+    const likeOnClick = (e) => {
+      e.preventDefault()
+
+      if (isActive) {
+        console.log('isActive');
+
+        axios
+          .post(`${process.env.BASE_URL}/api/removeFromLikes`, currentPostData)
+          .then(res => {
+            if (!res)
+              setIsActive(true)
+
+            setIsActive(false)
+          })
+      } else {
+        axios
+        .post(`${process.env.BASE_URL}/api/addToLikes`, currentPostData)
+        .then(res => {
+          if (!res) {
+            setIsActive(false)
+          }
+
+          setIsActive(true)
+        })
+      }
+    }
+
     const addToShareCount = async() => {
       axios
         .post(`${process.env.BASE_URL}/api/addToReshare`, currentPostData)
     }
+
+    const eachLike = post.likes.map(like => {
+      const data = {
+        user_id : like.user_id,
+        isLiked : like.isLiked
+      }
+
+      return data
+    })
+
+    useEffect(() => {
+      const activeState = () => {
+        if (eachLike[0] && (eachLike[0].user_id == user.id && eachLike[0].isLiked == true))
+          setIsActive(true)
+      }
+      activeState()
+    }, [])
 
     return(
       <Link href={`/post/${post.post_id}`} key={index}>
@@ -58,7 +104,7 @@ const PostItem = ({ postItems, user }) => {
                 </div>
               </div>
 
-              <div className="post-item__svg">
+              <div className={`post-item__svg ${isActive ? "active" : ""}`} onClick={likeOnClick}>
                 <Like />
               </div>
             </div>

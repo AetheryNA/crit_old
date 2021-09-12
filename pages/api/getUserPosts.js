@@ -17,6 +17,8 @@ const handler = nc()
             post_id : true,
             user_id : true,
             image_url : true,
+            like_count : true,
+            likes : true,
           }
         }
       },
