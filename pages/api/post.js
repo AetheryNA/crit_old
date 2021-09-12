@@ -27,6 +27,7 @@ const handler = nc()
     const postingData = {
       content: data.content,
       like_count: parseInt(data.like_count),
+      reshare: parseInt(data.reshare)
     }
 
     const user = req.session.get('user')

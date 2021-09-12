@@ -26,7 +26,7 @@ const userProfile = ({ userPosts, getFriends, user, loggedUserFriends }) => {
               <Feed />
               { user && (userPost.id === user.id ? "Your Feed" : "Their Feed")}
             </h3>
-            <PostItem postItems={userPosts && (userPost.posts)}/>
+            <PostItem postItems={userPosts && (userPost.posts)} user={user}/>
           </div>
           <div className="dashboard-right">
             <h3 className="flex flex-row">

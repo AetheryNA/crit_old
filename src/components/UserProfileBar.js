@@ -22,10 +22,10 @@ const UserProfileBar = ({ loggedUser, currentUser, friends }) => {
           />
         }
 
-        <h3> { currentUser || !currentUser === '' ? currentUser.username : 'Not found'} </h3>
+        <h3> { currentUser || !currentUser === '' ? currentUser[0].username : 'Not found'} </h3>
       </div>
 
-      { loggedUser && (currentUser[0].id === loggedUser.id ? <UserProfileSettings /> : ( foundFriend ? '' : <UserProfileAddFriend loggedUser={loggedUser} currentUser={currentUser}/>) )}
+      { loggedUser && (currentUser[0].id === loggedUser.id ? <UserProfileSettings currentUser={loggedUser} /> : ( foundFriend ? '' : <UserProfileAddFriend loggedUser={loggedUser} currentUser={currentUser}/>) )}
 
     </div>
     </>
