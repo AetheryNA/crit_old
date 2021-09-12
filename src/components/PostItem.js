@@ -105,7 +105,6 @@ const PostItem = ({ postItems, user }) => {
               </div>
 
               <div className={`post-item__svg ${isActive ? "active" : ""}`} onClick={likeOnClick}>
-              {/* <div className={`post-item__svg ${eachLike[0] && (eachLike[0].user_id == user.id && eachLike[0].isLiked == true || isActive) ? "active" : ""}`} onClick={likeOnClick}> */}
                 <Like />
               </div>
             </div>
