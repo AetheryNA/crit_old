@@ -42,7 +42,6 @@ describe('Should add to shares table', () => {
   })
   
   test('should add the share record to the shares table', async() => {
-    
     const addToShareTable = await prisma.shares.create({
       data : {
         user_id: 1,
