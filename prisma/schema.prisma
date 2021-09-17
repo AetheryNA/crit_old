@@ -20,7 +20,7 @@ model users {
   likes    likes[]
   lobby    lobby[]
   personality_weight Int @default(0)
-  personality_type String?
+  personality_type String
 }
 
 model posts {

@@ -23,7 +23,7 @@ const Lobbies = ({ lobbies, loggedUser, personality }) => {
           <div className="lobbies__info flex flex-row items-center">
             <div className="lobbies__image relative">
               <img src="/img/critLogoph.svg" alt="" />
-              { personality.personality_type != undefined 
+              { personality.personality_type
                 ? personality.personality_type == lobby.user.personality_type ?  <div className="recommended"> <Recommended /> </div> : ''
                 : ""
               }

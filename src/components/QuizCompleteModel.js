@@ -6,6 +6,8 @@ const QuizCompleteModel = ({ response }) => {
   const [open, setOpen] = useState(true)
   const router = useRouter()
 
+  console.log(response);
+
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={setOpen}>
@@ -46,7 +48,7 @@ const QuizCompleteModel = ({ response }) => {
                         This is your personality
                       </p>
                       <p className="mt-4">
-                      Quisque id volutpat libero, nec commodo sem. Morbi dictum viverra odio at rhoncus. In ullamcorper mauris et varius blandit. Fusce vitae lacus quis sapien accumsan lacinia. Aenean fermentum, dui et convallis elementum, ipsum turpis hendrerit justo, non maximus sapien ante quis risus. Fusce commodo nec arcu at laoreet. Donec vitae egestas tortor. Etiam eros ligula, sagittis sed faucibus ac, consectetur a enim. Curabitur a arcu odio. Suspendisse at nisl urna.
+                        {response.personality_msg}
                       </p>
                     </div>
                   </div>
