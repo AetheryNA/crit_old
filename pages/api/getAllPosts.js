@@ -9,6 +9,9 @@ const handler = nc()
       include : {
         author: true,
         likes: true,
+      },
+      orderBy : {
+        created_at : "asc"
       }
     }).catch((err) => {
       res.json({

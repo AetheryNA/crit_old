@@ -19,12 +19,15 @@ const handler = nc()
             image_url : true,
             like_count : true,
             likes : true,
-          }
+          },
+          orderBy : {
+            post_id : "asc"
+          },
         }
       },
       where : {
         id : parseInt(query.user_id)
-      }
+      },
     })
 
     return res.json({

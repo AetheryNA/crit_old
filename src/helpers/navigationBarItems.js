@@ -9,7 +9,7 @@ const navigationItems = [
   {
     name: 'Home',
     className: 'aside__nav-item',
-    href: '/',
+    href: '/home',
     svg: <HomeSVG />,
     isActive: false,
   },
@@ -30,7 +30,7 @@ const navigationItems = [
   {
     name: 'Trending',
     className: 'aside__nav-item',
-    href: '/',
+    href: '/trending',
     svg: <TrendingSVG />,
     isActive: false,
   },
