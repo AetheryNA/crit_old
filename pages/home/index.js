@@ -19,11 +19,6 @@ const index = ({ getPosts, getAllFriends, trending, user }) => {
           <InnerdashboardHeader title={'Your friends'} iconFriends={true}/>
           { !getAllFriends.getFriends.length > 0 ? <p> Couldn't find any friends, try adding a few? </p> : <HomeFriends friends={getAllFriends.getFriends}/>}
         </div>
-        
-        {/* <div className="dashboard-right__home-section">
-          <InnerdashboardHeader title={'People you might find interesting'} iconFriends={true}/>
-          { !getAllFriends ? <HomeFriends /> : <p> Couldn't find any friends </p> }
-        </div> */}
 
         <div className="dashboard-right__home-section">
           <InnerdashboardHeader title={'Advertisement'} />
