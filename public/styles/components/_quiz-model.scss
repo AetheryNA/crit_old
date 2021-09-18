@@ -1,6 +1,6 @@
 .quiz-model {
   &__overlay {
-    background-color: rgba( $color: $dark-orange, $alpha: 0.75);
+    background-color: rgba($color: $dark-orange, $alpha: 0.75);
   }
 
   &__wrap {
@@ -13,12 +13,17 @@
     }
   }
 
+  &__heading {
+    border-bottom: 2px solid $white;
+  }
+
   &__btn {
     background-color: $black-grey;
 
     button {
-      border-radius: 5%;
+      border-radius: 5px;
       color: $white;
+      width: 50%;
     }
   }
 }
