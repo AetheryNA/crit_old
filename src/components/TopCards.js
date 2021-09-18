@@ -9,6 +9,7 @@ const TopCards = ({ trending }) => {
           <div className="top-cards__card-profile">
             <a href="/" className="flex flex-row items-center">
               <img 
+                className="h-8 w-8"
                 src={`/${item.author.avatar_url}`}
               />
               <p> {item.author.username} </p>

@@ -21,7 +21,7 @@ const HomeFriends = ({ friends }) => {
     <>
       <div className="user-profile-friends">
         <div className="user-profile-friends__friend flex flex-row">
-          {allFriends ? allFriends : <p>Couldn't find anything!</p>}
+          {allFriends ? allFriends.splice(0, 3) : <p>Couldn't find anything!</p>}
         </div>
       </div>
     </>

@@ -19,6 +19,8 @@ model users {
   shares   shares[]
   likes    likes[]
   lobby    lobby[]
+  personality_weight Int @default(0)
+  personality_type String
 }
 
 model posts {

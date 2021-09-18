@@ -1,10 +1,15 @@
 import { withSessionSSR } from '../../lib/auth/session'
 import InnerdashboardHeader from '../../src/components/InnerdashboardHeader'
 import PostItem from '../../src/components/PostItem'
+import Head from 'next/head'
 
 const index = ({ postItems, user }) => {
   return (
     <>
+      <Head>
+        <title> CRIT | My Feed </title>
+      </Head>
+
       <div className="dashboard-left">
         <InnerdashboardHeader iconActivity={true}/>
         <PostItem postItems={postItems} user={user}/>
