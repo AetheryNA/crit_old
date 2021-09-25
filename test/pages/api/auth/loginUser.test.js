@@ -3,7 +3,7 @@ import prisma from "../../../../lib/adapters/prismaClient"
 import bcrypt from "bcrypt"
 import nc from "next-connect"
 
-describe("Login testing",() => {
+describe.skip("Login testing",() => {
   jest.mock("../../../../lib/adapters/prismaClient")
   jest.mock("bcrypt")
   jest.mock("next-connect")

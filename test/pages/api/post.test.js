@@ -4,7 +4,7 @@ import prisma from '../../../lib/adapters/prismaClient'
 import Post from '../../../lib/models/post'
 import multer from 'multer'
 
-describe('Everything posts', () => {
+describe.skip('Everything posts', () => {
   jest.mock('next-connect')
   jest.mock('../../../lib/adapters/prismaClient')
   jest.mock('../../../lib/models/post')

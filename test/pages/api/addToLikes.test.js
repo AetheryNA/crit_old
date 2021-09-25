@@ -1,7 +1,7 @@
 import { afterAll, expect, jest } from '@jest/globals'
 import prisma from '../../../lib/adapters/prismaClient'
 
-describe('Should add a Like to a post', () => {
+describe.skip('Should add a Like to a post', () => {
   jest.mock('../../../lib/adapters/prismaClient')
 
   afterAll(async() => {

@@ -1,7 +1,7 @@
-import { afterAll, expect, jest } from '@jest/globals'
+import { expect } from '@jest/globals'
 import prisma from '../../../lib/adapters/prismaClient'
 
-describe('Should get posts from users', () => {
+describe.skip('Should get posts from users', () => {
   test('should retrieve the right user', async() => {
     const users = await prisma.users.findMany({
       include : {
