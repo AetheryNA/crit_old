@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
-    "migrate:ci": "npx prisma migrate deploy",
-    "migrate:test": "dotenv -e .env.test -- npx prisma migrate dev --name postgres-init"
+    "migrate:ci": "dotenv -e .env.test -- npx prisma migrate deploy",
+    "migrate:test": "dotenv -e .env.test -- npx prisma migrate dev"
   },
   "dependencies": {
     "@headlessui/react": "^1.3.0",

@@ -20,7 +20,7 @@ model users {
   likes    likes[]
   lobby    lobby[]
   personality_weight Int @default(0)
-  personality_type String
+  personality_type String?
 }
 
 model posts {
@@ -29,11 +29,11 @@ model posts {
   author users @relation(fields: [user_id], references: [id]) 
   image_url String
   content String
-  like_count Int
+  like_count Int @default(0)
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
   shares shares[]
-  reshare Int 
+  reshare Int @default(0)
   likes likes[]
   total_social_count Int @default(0)
 }
