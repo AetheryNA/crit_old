@@ -1,7 +1,7 @@
 import { afterAll, expect, jest } from '@jest/globals'
 import prisma from '../../../lib/adapters/prismaClient'
 
-describe('Should add to shares table', () => {
+describe.skip('Should add to shares table', () => {
   jest.mock('../../../lib/adapters/prismaClient')
 
   afterAll(async() => {

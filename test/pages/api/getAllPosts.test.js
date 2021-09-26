@@ -1,7 +1,7 @@
 import { afterAll, expect, jest } from '@jest/globals'
 import prisma from '../../../lib/adapters/prismaClient'
 
-describe('Getting all the posts from the posts table', () => {
+describe.skip('Getting all the posts from the posts table', () => {
   jest.mock('../../../lib/adapters/prismaClient')
 
   afterAll(() => {
