@@ -1,0 +1,36 @@
+.user-profile-friends {
+  &__friend {
+    img {
+      margin-right: 10px;
+      border-radius: 50%;
+      height: 35px;
+      width: 35px;
+    }
+
+    a {
+      margin-right: 20px;
+
+      p {
+        transition: $basic-transition;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        p {
+          color: $dark-orange;
+        }
+      }
+    }
+  }
+
+  a {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

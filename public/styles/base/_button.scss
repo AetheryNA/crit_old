@@ -1,0 +1,37 @@
+button,
+.button {
+  cursor: pointer;
+}
+
+.button {
+  background: {
+    color: $orange;
+    size: cover;
+  };
+
+  padding: 10px;
+  transition: 0.3s ease;
+
+  &:hover {
+    background: {
+      color: $dark-orange;
+    }
+  }
+
+  p,
+  span {
+    color: $white;
+  }
+}
+
+.recommended {
+  left: -15px;
+  position: absolute;
+  top: -5px;
+  
+  svg {
+    color: $dark-orange;
+    height: 25px;
+    width: 25px;
+  }
+}

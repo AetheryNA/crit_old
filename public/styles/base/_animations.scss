@@ -1,0 +1,67 @@
+// Transitions
+$basic-transition : 0.3s ease;
+
+// Button Animations
+@mixin quizButtonAnim {
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    transition: .5s;
+  }
+
+  &::after {
+    top: -3px;
+    left: -3px;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+  }
+
+  &::before {
+    bottom: -3px;
+    right: -3px;
+    border-bottom: 1px solid transparent;
+    border-right: 1px solid transparent;
+  }
+
+  &:hover {
+    color: $orange;
+
+    &::after,
+    &::before {
+      width: calc(50% + 1px);
+      height: calc(50% + 1px);
+      border-color: $orange;
+    }
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes iconPop {
+  0% {
+    transform: translateY(0)
+  }
+
+  10% {
+    transform: translateY(-5px)
+  }
+
+  20% {
+    transform: translateY(0)
+  }
+
+  100% {
+    transform: translateY(0)
+  }
+}

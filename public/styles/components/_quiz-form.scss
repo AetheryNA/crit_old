@@ -1,0 +1,120 @@
+.quiz-slideshow {
+  height: calc(100vh - 190px);
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: $dark-orange;
+  }
+}
+
+.quiz-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-form {
+  max-width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__header {
+    text-align: center;
+
+    h3 {
+      color: $orange;
+      font-size: 1.5rem;
+
+      @include tablet {
+        font-size: 1.7rem;
+      }
+      
+      &::after {
+        margin: -7px auto 0;
+        background-color: $white;
+        content: '';
+        display: block;
+        height: 1px;
+        width: 130px;
+
+        @include tablet {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    p {
+      margin: {
+        top: 15px;
+        bottom: 50px;
+      }
+    }
+  }
+
+  &__buttons {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      margin-top: 80px;
+    }
+    
+    input {
+      display: none;
+
+      &:checked + .quiz-form__answer {
+        border: 2px solid $dark-orange;
+      }
+    }
+  }
+
+  &__answer {
+    @include quizButtonAnim;
+
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: $dark-grey;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: $white;
+    cursor: pointer;
+    height: 35px;
+    position: relative;
+    transition: $basic-transition;
+    width: 100%;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include tablet {
+      height: 50px;
+    }
+  }
+
+  &__btn-wrap {
+    margin: 0 auto 50px;
+    max-width: 250px;
+    width: 100%;
+  }
+
+  &__submit-btn {
+    margin: 0 auto;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: $semi-bold;
+    width: 100%;
+
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
+
+      &:hover {
+        background-color: $orange;
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 440px;
+  width: 100%;
+
+  @include desktop {
+    align-items: center;
+  }
+
+  label {
+    font-size: 10px;
+    font-weight: $semi-bold;
+  }
+
+  p {
+    font-family: $raleway;
+  }
+
+  &__head {
+    margin: 0 0 35px;
+    color: $orange;
+    text-transform: uppercase;
+
+    &::after {
+      background: {
+        color: $white;
+      }
+
+      content: '';
+      display: block;
+      height: 3px;
+      max-width: 160px;
+      width: 100%;
+    }
+  }
+
+  &__catchphrase {
+    margin: 0 0 35px;
+    font-size: 20px;
+    font-weight: $semi-bold;
+  }
+
+  &__username,
+  &__password {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      width: 100%;
+    }
+
+    label {
+      margin: 0 0 5px;
+      font-size: 15px;
+    }
+
+    input {
+      padding: 10px 5px;
+      outline: none;
+
+      &.login-form__error {
+        outline: 2px solid $dark-orange;
+      }
+    }
+  }
+
+  &__username {
+    margin: 0 0 10px;
+
+    @include desktop {
+      margin: 0 0 20px;
+    }
+  }
+
+  &__password {
+    @include desktop {
+      margin: 0 0 25px;
+    }
+
+    input {
+      margin: 0 0 5px;
+    }
+
+    p {
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: $semi-bold;
+      max-width: 110px;
+
+      @include desktop {
+        margin: 0 0 0 auto;
+      }
+    }
+  }
+
+  &__submit {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include desktop {
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  
+  &__sign-up {
+    font-size: 13px;
+    font-weight: $semi-bold;
+    transition: $basic-transition;
+
+    @include desktop {
+      order: 2;
+    }
+  }
+
+  &__button {
+    background: {
+      color: $orange;
+    }
+
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-family: $raleway;
+    font-weight: $semi-bold;
+    outline: none;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+
+    &:hover {
+      background: {
+        color: $dark-orange;
+      }
+    }
+
+    @include desktop {
+      margin: 0 0 10px;
+      padding: 15px 0;
+      order: 1;
+      width: 100%;
+    }
+  }
+  
+  &__bump {
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: center;
+
+    p {
+      color: $orange;
+      font-weight: $semi-bold;
+    }
+  }
+}

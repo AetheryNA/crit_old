@@ -1,0 +1,56 @@
+// Typography
+// Headings
+
+h1,
+h2,
+h3,
+label {
+  color: $white;
+  font-family: $raleway;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 5.875rem;
+}
+
+h2 {
+  font-size: 3.875rem;
+  line-height: 4.5625rem;
+}
+
+h3 {
+  font-size: 1.875rem;
+  line-height: 3.6875rem;
+
+  @include tablet {
+    font-size: 3.125rem;
+  }
+}
+
+p {
+  color: $white;
+  font-size: 0.625rem;
+  line-height: 0.6875rem;
+  font-family: $roboto;
+
+  @include tablet {
+    font-size: 0.9375rem;
+    line-height: 1.125rem;
+  }
+}
+
+a {
+  color: $orange;
+  text-decoration: none;
+  transition: $basic-transition;
+
+  &:hover {
+    color: $dark-orange;
+  }
+}
+
+li {
+  color: $white;
+  font-family: $roboto;
+}

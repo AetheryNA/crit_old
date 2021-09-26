@@ -1,0 +1,31 @@
+.app-aside {
+  align-items: center;
+  background-color: $semi-dark-grey;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  height: 100%;
+  width: 15%;
+
+  @include desktop {
+    width: 13%;
+  }
+
+  p {
+    font-family: $raleway;
+    font-weight: $semi-bold;
+  }
+
+  &__copyright {
+    margin-bottom: 20px;
+    text-align: center;
+
+    p {
+      color: $grey;
+    }
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
+  }
+}

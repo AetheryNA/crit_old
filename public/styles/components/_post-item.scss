@@ -1,0 +1,105 @@
+.post-item {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: rgba($color: $white, $alpha: .02);
+  cursor: pointer;
+  transition: $basic-transition;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  &:last-child {
+    margin-bottom: 60px;
+  }
+
+  a {
+    color: $white;
+    display: block;
+    font-family: $roboto;
+    font-size: 14px;
+    font-weight: $semi-bold;
+  }
+
+  &__image {
+    max-width: 400px;
+    width: 100%;
+
+    @include tablet {
+      max-width: 800px;
+    }
+
+    @include desktop {
+      max-width: 100%;
+    }
+
+    img {
+      object-fit: cover;
+      max-height: 250px;
+
+      @include tablet {
+        max-height: 500px;
+      }
+
+      @include desktop {
+        max-height: 600px;
+      }
+    }
+  }
+
+  &__social-status {
+    height: 30px;
+  }
+
+  &__share {
+    svg {
+      color: $white;
+      transition: $basic-transition;
+    }
+
+    &:hover {
+      svg {
+        color: $dark-orange;
+      }
+    }
+  }
+
+  &__svg {
+    cursor: pointer;
+    transition: $basic-transition;
+
+    &:hover {
+      svg {
+        color: $orange;
+      }
+    }
+
+    svg {
+      color: $white;
+      transition: $basic-transition;
+      width: 20px;
+
+      @include tablet {
+        width: 25px;
+      }
+    }
+
+    &.active {
+      svg {
+        animation: iconPop 2s;
+        color: $dark-orange;
+      }
+    }
+  }
+
+  &__comment {
+    input {
+      background-color: rgba($color: $white, $alpha: .06);
+      color: $white;
+
+      &::placeholder {
+        color: $grey;
+      }
+    }
+  }
+}

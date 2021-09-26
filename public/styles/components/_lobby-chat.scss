@@ -1,0 +1,41 @@
+.lobby-chat {
+  margin: 20px 0;
+  background-color: $black-v2;
+
+  &__messages {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: 350px;
+    overflow-y: auto;
+    padding: 1em;
+  }
+
+  &__send-msg {
+    padding: 10px;
+    width: 100%;
+  }
+
+  &__textarea {
+    padding: 10px 20px;
+    background-color: $semi-dark-grey;
+    border-radius: 30px;
+    max-height: 45px;
+    font-family: $roboto;
+    resize: none;
+    outline: none;
+    color: $white;
+    width: 100%;
+  }
+
+  &__message {
+    line-height: 1;
+
+    &[data-user="me"] {
+      span {
+        color: $dark-orange;
+      }
+    }
+  }
+}
