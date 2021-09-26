@@ -4,7 +4,6 @@ on: pull_request
 
 env: 
   NODE_VERSION: "12.16.3"
-  DB_HOST: localhost
 
 jobs:
   test:
@@ -12,11 +11,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    timeout-minutes: 10
+    timeout-minutes: 5
 
     services:
       db:
-        image: postgres:12.3
+        image: postgres:13.4
         ports: ['5432:5432']
         env:
           POSTGRES_PASSWORD: postgres
