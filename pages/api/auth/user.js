@@ -1,25 +1,25 @@
-import nc from 'next-connect'
-import { withSession } from '../../../lib/auth/session'
+import nc from "next-connect";
+import { withSession } from "../../../lib/auth/session";
 
 const handler = nc()
   .use(withSession)
-  .get(async(req, res) => {
+  .get(async (req, res) => {
     try {
-      const user = req.session.get('user')
+      const user = req.session.get("user");
 
       if (user) {
         return res.json({
           LoggedIn: true,
-          ...user
-        })
+          ...user,
+        });
       } else {
         return res.json({
-          LoggedIn: false
-        })
+          LoggedIn: false,
+        });
       }
-    } catch(e) {
-      console.log(e)
+    } catch (e) {
+      console.log(e);
     }
-  })
+  });
 
 export default handler;

@@ -1,32 +1,32 @@
-import nc from 'next-connect'
-import prisma from '../../lib/adapters/prismaClient'
-import { withSession } from '../../lib/auth/session'
+import nc from "next-connect";
+import prisma from "../../lib/adapters/prismaClient";
+import { withSession } from "../../lib/auth/session";
 
 const handler = nc()
   .use(withSession)
-  .get(async(req, res) => {
-    const query = req.query
+  .get(async (req, res) => {
+    const query = req.query;
 
     const getFriends = await prisma.usersRelationships.findMany({
       where: {
-        user_id: parseInt(query.user_id)
+        user_id: parseInt(query.user_id),
       },
       include: {
         friends: {
-          select : {
+          select: {
             id: true,
             username: true,
             avatar_url: true,
             email: true,
             usersRelationships_friends: true,
-          }
+          },
         },
       },
-    })
+    });
 
     return res.json({
-      getFriends
-    })
-  })
+      getFriends,
+    });
+  });
 
-export default handler
+export default handler;

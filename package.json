@@ -10,7 +10,7 @@
     "migrate": "npx prisma migrate dev",
     "migrate:ci": "dotenv -e .env.test -- npx prisma migrate deploy",
     "migrate:test": "dotenv -e .env.test -- npx prisma migrate dev",
-    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint . --ext .js,.ts,.tsx --fix",
     "lint:nofix": "eslint . --ext .js,.ts,.tsx"
   },

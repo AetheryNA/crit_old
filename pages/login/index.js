@@ -1,13 +1,13 @@
-import Image from 'next/image'
-import LoginForm from '../../src/components/LoginForm'
-import LayoutAuth from '../../src/components/layouts/Auth'
+import Image from "next/image";
+import LoginForm from "../../src/components/LoginForm";
+import LayoutAuth from "../../src/components/layouts/Auth";
 
 const Login = () => {
   return (
     <>
       <div className="login">
         <div className="login__container">
-          <Image 
+          <Image
             className="login__logo"
             src="/img/crit.svg"
             alt="Crit"
@@ -23,9 +23,9 @@ const Login = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-Login.layout = LayoutAuth
+Login.layout = LayoutAuth;
 
-export default Login
+export default Login;
