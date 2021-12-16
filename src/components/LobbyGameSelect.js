@@ -1,22 +1,31 @@
-import { Fragment, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import Edit from '../../public/img/icons/editwCircle.svg'
+import { Fragment, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import Edit from "../../public/img/icons/editwCircle.svg";
 
 const LobbyGameSelect = () => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <>
       <div className="lobby-game-select flex flex-col">
         <h3 className="lobby-game-select__heading"> We are playing </h3>
-        <div className="lobby-game-select__current-game" onClick={() => {setOpen(!open)}}>
+        <div
+          className="lobby-game-select__current-game"
+          onClick={() => {
+            setOpen(!open);
+          }}
+        >
           <img src="/img/gameSelectPH.png" />
           <Edit />
         </div>
       </div>
 
       <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="fixed inset-0 overflow-hidden" onClose={setOpen}>
+        <Dialog
+          as="div"
+          className="fixed inset-0 overflow-hidden"
+          onClose={setOpen}
+        >
           <div className="absolute inset-0 overflow-hidden">
             <Transition.Child
               as={Fragment}
@@ -61,11 +70,16 @@ const LobbyGameSelect = () => {
                   </Transition.Child>
                   <div className="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll">
                     <div className="px-4 sm:px-6">
-                      <Dialog.Title className="text-lg font-medium text-gray-900">Panel title</Dialog.Title>
+                      <Dialog.Title className="text-lg font-medium text-gray-900">
+                        Panel title
+                      </Dialog.Title>
                     </div>
                     <div className="mt-6 relative flex-1 px-4 sm:px-6">
                       <div className="absolute inset-0 px-4 sm:px-6">
-                        <div className="h-full border-2 border-dashed border-gray-200" aria-hidden="true" />
+                        <div
+                          className="h-full border-2 border-dashed border-gray-200"
+                          aria-hidden="true"
+                        />
                       </div>
                     </div>
                   </div>
@@ -76,7 +90,7 @@ const LobbyGameSelect = () => {
         </Dialog>
       </Transition.Root>
     </>
-  )
-}
+  );
+};
 
-export default LobbyGameSelect
+export default LobbyGameSelect;

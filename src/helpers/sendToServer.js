@@ -1,14 +1,14 @@
-import multer from 'multer'
+import multer from "multer";
 
 const sendToServer = (path) => {
   const upload = multer({
     storage: multer.diskStorage({
       destination: path,
       filename: (req, file, cb) => cb(null, file.originalname),
-    })
-  })
+    }),
+  });
 
-  return upload
-}
+  return upload;
+};
 
-export default sendToServer
+export default sendToServer;

@@ -1,12 +1,16 @@
-import { Fragment, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
+import { Fragment, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 
 const QuizModel = () => {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(true);
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={setOpen}>
+      <Dialog
+        as="div"
+        className="fixed z-10 inset-0 overflow-y-auto"
+        onClose={setOpen}
+      >
         <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
           <Transition.Child
             as={Fragment}
@@ -19,7 +23,10 @@ const QuizModel = () => {
           >
             <Dialog.Overlay className="quiz-model__overlay fixed inset-0 transition-opacity" />
           </Transition.Child>
-          <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
+          <span
+            className="hidden sm:inline-block sm:align-middle sm:h-screen"
+            aria-hidden="true"
+          >
             &#8203;
           </span>
           <Transition.Child
@@ -40,7 +47,9 @@ const QuizModel = () => {
                     </Dialog.Title>
                     <div className="mt-2">
                       <p>
-                        To have full access to the site you are reqired to complete this quiz which will help us determine what kind of people you will like to be around!
+                        To have full access to the site you are reqired to
+                        complete this quiz which will help us determine what
+                        kind of people you will like to be around!
                       </p>
                     </div>
                   </div>
@@ -60,7 +69,7 @@ const QuizModel = () => {
         </div>
       </Dialog>
     </Transition.Root>
-  )
-}
+  );
+};
 
-export default QuizModel
+export default QuizModel;

@@ -1,6 +1,6 @@
-import { Fragment } from "react"
-import { Menu, Transition } from '@headlessui/react'
-import NotificationSVG from "../../public/img/icons/notification.svg"
+import { Fragment } from "react";
+import { Menu, Transition } from "@headlessui/react";
+import NotificationSVG from "../../public/img/icons/notification.svg";
 
 const Notifactions = ({ notifications }) => {
   const displayNotifications = notifications.map((notification, index) => {
@@ -8,8 +8,8 @@ const Notifactions = ({ notifications }) => {
       <Menu.Item className="notification__item" key={index}>
         <p> {notification.notificationValue} </p>
       </Menu.Item>
-    )
-  })
+    );
+  });
 
   return (
     <Menu as="div" className="notification">
@@ -27,7 +27,7 @@ const Notifactions = ({ notifications }) => {
         </>
       )}
     </Menu>
-  )
-}
+  );
+};
 
-export default Notifactions
+export default Notifactions;

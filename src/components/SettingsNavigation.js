@@ -5,7 +5,7 @@ const SettingsNavigation = () => {
         Peronal Infomation
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SettingsNavigation
+export default SettingsNavigation;

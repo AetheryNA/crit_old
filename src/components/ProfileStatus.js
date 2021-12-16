@@ -1,37 +1,37 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import useUser from '../../lib/auth/useUser'
+import axios from "axios";
+import { useEffect, useState } from "react";
+import useUser from "../../lib/auth/useUser";
 
 const ProfileStatus = () => {
-  const { user } = useUser()
-  const [statusTabActive, setstatusTabActive] = useState("false")
-  const [ userData, setUserData ] = useState()
+  const { user } = useUser();
+  const [statusTabActive, setstatusTabActive] = useState("false");
+  const [userData, setUserData] = useState();
 
   const handleStatusTab = () => {
-    setstatusTabActive(!statusTabActive)
-  }
+    setstatusTabActive(!statusTabActive);
+  };
 
   useEffect(() => {
-    axios.get(`/api/getUser?user_id=${user.id}`)
-      .then(res => {
-        setUserData(res.data)
-      })
-  }, [])
+    axios.get(`/api/getUser?user_id=${user.id}`).then((res) => {
+      setUserData(res.data);
+    });
+  }, []);
 
   return (
     <>
       <div className="profile">
-        <div className={`profile__picture ${statusTabActive ? "" : "active"}`} onClick={() => { handleStatusTab() }}>
-          { userData && (
-            userData.avatar_url ?
-              <img
-                src={`/${userData.avatar_url}`}
-              />
-              :
-              <img
-                src="/img/pfp.png"
-              />
-          )}
+        <div
+          className={`profile__picture ${statusTabActive ? "" : "active"}`}
+          onClick={() => {
+            handleStatusTab();
+          }}
+        >
+          {userData &&
+            (userData.avatar_url ? (
+              <img src={`/${userData.avatar_url}`} />
+            ) : (
+              <img src="/img/pfp.png" />
+            ))}
 
           <div className="status"></div>
           <ul className="status__tab">
@@ -48,7 +48,7 @@ const ProfileStatus = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ProfileStatus
+export default ProfileStatus;

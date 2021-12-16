@@ -1,25 +1,25 @@
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 const activePage = (navItem) => {
-  const router = useRouter()
-  let toActive = ''
+  const router = useRouter();
+  let toActive = "";
 
   const itemValues = {
-    'Home' : '/home',
-    'User' : '/profile/user',
-    'Activity Feed' : '/activity-feed',
-    'Trending' : '/trending',
-    'Friends' : '/friends',
-    'Lobby' : '/lobby'
-  }
+    Home: "/home",
+    User: "/profile/user",
+    "Activity Feed": "/activity-feed",
+    Trending: "/trending",
+    Friends: "/friends",
+    Lobby: "/lobby",
+  };
 
   for (const [key, value] of Object.entries(itemValues)) {
     if (router.pathname.includes(value) && navItem.name == key) {
-      toActive = 'active'
+      toActive = "active";
     }
   }
 
-  return toActive
-}
+  return toActive;
+};
 
-export default activePage
+export default activePage;
