@@ -1,3 +1,5 @@
-require('dotenv').config({
-  path: '.env.test',
+import * as dotenv from "dotenv";
+
+dotenv.config({
+  path: ".env.test"
 });
