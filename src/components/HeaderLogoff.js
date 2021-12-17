@@ -1,28 +1,28 @@
-import LogoffSVG from "../../public/img/icons/logoff.svg"
-import useUser from "../../lib/auth/useUser"
-import { useRouter } from "next/router"
+import LogoffSVG from "../../public/img/icons/logoff.svg";
+import useUser from "../../lib/auth/useUser";
+import { useRouter } from "next/router";
 
 const HeaderLogoff = () => {
-  const { mutateUser } = useUser()
-  const router = useRouter()
+  const { mutateUser } = useUser();
+  const router = useRouter();
 
   const logoff = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    mutateUser (
-      await fetch("/api/auth/logoffUser", { 
-        method: "POST" 
+    mutateUser(
+      await fetch("/api/auth/logoffUser", {
+        method: "POST",
       }),
-      false,
+      false
     );
     router.push("/trending");
-  }
+  };
 
   return (
-    <button onClick={ logoff } className="log-off">
+    <button onClick={logoff} className="log-off">
       <LogoffSVG />
     </button>
-  )
-}
+  );
+};
 
-export default HeaderLogoff
+export default HeaderLogoff;

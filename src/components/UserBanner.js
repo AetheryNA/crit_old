@@ -1,7 +1,10 @@
 const UserBanner = () => {
   return (
-    <div className="user-banner" style={{ backgroundImage: `url('/img/userBannerPlaceholder.jpg')`}}></div>
-  )
-}
+    <div
+      className="user-banner"
+      style={{ backgroundImage: `url('/img/userBannerPlaceholder.jpg')` }}
+    ></div>
+  );
+};
 
-export default UserBanner
+export default UserBanner;

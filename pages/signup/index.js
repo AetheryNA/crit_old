@@ -1,5 +1,5 @@
-import LayoutAuth from '../../src/components/layouts/Auth'
-import SignUpForm from '../../src/components/SignUpForm'
+import LayoutAuth from "../../src/components/layouts/Auth";
+import SignUpForm from "../../src/components/SignUpForm";
 
 const SignUp = () => {
   return (
@@ -15,9 +15,9 @@ const SignUp = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-SignUp.layout = LayoutAuth
+SignUp.layout = LayoutAuth;
 
-export default SignUp
+export default SignUp;

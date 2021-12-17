@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useChannel } from "./AblyHook"
+import React, { useEffect, useState } from "react";
+import { useChannel } from "./AblyHook";
 
 const AblyChat = ({ loggedUser, lobbyName }) => {
   let inputBox = null;
@@ -18,12 +18,12 @@ const AblyChat = ({ loggedUser, lobbyName }) => {
     channel.publish({ name: "chat-message", data: messageText });
     setMessageText("");
     inputBox.focus();
-  }
+  };
 
   const handleFormSubmission = (event) => {
     event.preventDefault();
     sendChatMessage(messageText);
-  }
+  };
 
   const handleKeyPress = (event) => {
     if (event.charCode !== 13 || messageTextIsEmpty) {
@@ -31,11 +31,23 @@ const AblyChat = ({ loggedUser, lobbyName }) => {
     }
     sendChatMessage(messageText);
     event.preventDefault();
-  }
+  };
 
   const messages = receivedMessages.map((message, index) => {
-    const author = message.connectionId === ably.connection.id ? loggedUser.username : "other";
-    return <p key={index} className='lobby-chat__message' data-user={author == loggedUser.username ? 'me' : 'other'} data-author={author}><span>{author}</span> : {message.data}</p>;
+    const author =
+      message.connectionId === ably.connection.id
+        ? loggedUser.username
+        : "other";
+    return (
+      <p
+        key={index}
+        className="lobby-chat__message"
+        data-user={author == loggedUser.username ? "me" : "other"}
+        data-author={author}
+      >
+        <span>{author}</span> : {message.data}
+      </p>
+    );
   });
 
   useEffect(() => {
@@ -43,23 +55,29 @@ const AblyChat = ({ loggedUser, lobbyName }) => {
   });
 
   return (
-    <div className='lobby-chat'>
-      <div className='lobby-chat__messages'>
+    <div className="lobby-chat">
+      <div className="lobby-chat__messages">
         {messages}
-        <div ref={(element) => { messageEnd = element; }}></div>
+        <div
+          ref={(element) => {
+            messageEnd = element;
+          }}
+        ></div>
       </div>
-      <form onSubmit={handleFormSubmission} className='lobby-chat__send-msg'>
+      <form onSubmit={handleFormSubmission} className="lobby-chat__send-msg">
         <textarea
-          ref={(element) => { inputBox = element; }}
+          ref={(element) => {
+            inputBox = element;
+          }}
           value={messageText}
           placeholder="Type a message..."
-          onChange={e => setMessageText(e.target.value)}
+          onChange={(e) => setMessageText(e.target.value)}
           onKeyPress={handleKeyPress}
-          className='lobby-chat__textarea'
+          className="lobby-chat__textarea"
         ></textarea>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default AblyChat
+export default AblyChat;

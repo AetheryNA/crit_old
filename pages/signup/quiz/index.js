@@ -1,10 +1,10 @@
-import Image from 'next/image'
-import Head from 'next/head'
+import Image from "next/image";
+import Head from "next/head";
 
-import LayoutAuth from '../../../src/components/layouts/Auth'
-import QuizForm from '../../../src/components/QuizForm'
-import QuizModel from '../../../src/components/QuizModel'
-import { withSessionSSR } from '../../../lib/auth/session'
+import LayoutAuth from "../../../src/components/layouts/Auth";
+import QuizForm from "../../../src/components/QuizForm";
+import QuizModel from "../../../src/components/QuizModel";
+import { withSessionSSR } from "../../../lib/auth/session";
 
 const Quiz = ({ user }) => {
   return (
@@ -19,7 +19,7 @@ const Quiz = ({ user }) => {
           <QuizForm loggedUser={user} />
 
           <div className="quiz__image-container">
-            <Image 
+            <Image
               className="quiz__logo"
               src="/img/crit.svg"
               alt="Crit"
@@ -30,27 +30,27 @@ const Quiz = ({ user }) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-Quiz.layout = LayoutAuth
+Quiz.layout = LayoutAuth;
 
 export const getServerSideProps = withSessionSSR(async function ({ req, res }) {
-  const user = req.session.get('user')
+  const user = req.session.get("user");
 
   if (!user) {
     return {
-      redirect : {
-        destination : '/login'
-      }
-    }
+      redirect: {
+        destination: "/login",
+      },
+    };
   }
 
   return {
-    props: { 
+    props: {
       user,
     },
-  }
-})
+  };
+});
 
-export default Quiz
+export default Quiz;

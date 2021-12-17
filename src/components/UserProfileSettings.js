@@ -1,21 +1,31 @@
-import { Fragment, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import SettingsNavigation from './SettingsNavigation'
-import SettingsProfileEdit from './SettingsProfileEdit'
-import Settings from '../../public/img/icons/settings.svg'
-import Plus from "../../public/img/icons/plus.svg"
+import { Fragment, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import SettingsNavigation from "./SettingsNavigation";
+import SettingsProfileEdit from "./SettingsProfileEdit";
+import Settings from "../../public/img/icons/settings.svg";
+import Plus from "../../public/img/icons/plus.svg";
 
 const UserProfileSettings = ({ currentUser }) => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <>
-      <div className="user-profile-settings__button flex items-center justify-center ml-auto z-10" onClick={() => {setOpen(!open)}}>
+      <div
+        className="user-profile-settings__button flex items-center justify-center ml-auto z-10"
+        onClick={() => {
+          setOpen(!open);
+        }}
+      >
         <Settings />
       </div>
 
       <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" auto-reopen="true" className="fixed inset-0 overflow-hidden user-profile-settings" onClose={setOpen}>
+        <Dialog
+          as="div"
+          auto-reopen="true"
+          className="fixed inset-0 overflow-hidden user-profile-settings"
+          onClose={setOpen}
+        >
           <div className="absolute inset-0 overflow-hidden">
             <Transition.Child
               as={Fragment}
@@ -56,7 +66,7 @@ const UserProfileSettings = ({ currentUser }) => {
                   </Transition.Child>
 
                   <SettingsNavigation />
-                  
+
                   <div className="user-profile-settings__col user-profile-settings__col--1 h-full flex-col py-6 shadow-xl w-1/12 hidden md:flex">
                     <div className="user-profile-settings__close-col absolute">
                       <button onClick={() => setOpen(false)}>
@@ -75,7 +85,7 @@ const UserProfileSettings = ({ currentUser }) => {
                     </ul>
                   </div>
                   <div className="user-profile-settings__col user-profile-settings__col--3 h-full flex flex-col py-6 shadow-xl w-full md:w-8/12">
-                    <SettingsProfileEdit userDetails={currentUser}/>
+                    <SettingsProfileEdit userDetails={currentUser} />
                   </div>
                 </div>
               </Transition.Child>
@@ -84,7 +94,7 @@ const UserProfileSettings = ({ currentUser }) => {
         </Dialog>
       </Transition.Root>
     </>
-  )
-}
+  );
+};
 
-export default UserProfileSettings
+export default UserProfileSettings;

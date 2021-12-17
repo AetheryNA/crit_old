@@ -1,6 +1,6 @@
-import { withSessionSSR } from '../../lib/auth/session'
-import InnerDashboardHeader from '../../src/components/InnerdashboardHeader'
-import PostItem from '../../src/components/PostItem'
+import { withSessionSSR } from "../../lib/auth/session";
+import InnerDashboardHeader from "../../src/components/InnerdashboardHeader";
+import PostItem from "../../src/components/PostItem";
 
 const index = ({ postItems, user }) => {
   return (
@@ -11,21 +11,21 @@ const index = ({ postItems, user }) => {
       </div>
       <div className="dashboard-right"></div>
     </>
-  )
-}
+  );
+};
 
-export const getServerSideProps = withSessionSSR(async ({req, res}) => {
-  const user = req.session.get('user')
+export const getServerSideProps = withSessionSSR(async ({ req, res }) => {
+  const user = req.session.get("user");
 
-  const response = await fetch('http://localhost:3000/api/trending')
-  const postItems = await response.json()
+  const response = await fetch("http://localhost:3000/api/trending");
+  const postItems = await response.json();
 
   return {
-    props : {
+    props: {
       postItems,
-      user
-    }
-  }
-})
+      user,
+    },
+  };
+});
 
-export default index
+export default index;

@@ -1,9 +1,9 @@
 const dashboardHeaderTitle = (router) => {
-  const currentURL = router.pathname
-  const pageURL = currentURL.replace(/\//g, "")
-  const title = pageURL.replace(/-/g, ' ')
+  const currentURL = router.pathname;
+  const pageURL = currentURL.replace(/\//g, "");
+  const title = pageURL.replace(/-/g, " ");
 
-  return title
-}
+  return title;
+};
 
-export default dashboardHeaderTitle 
+export default dashboardHeaderTitle;

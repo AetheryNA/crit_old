@@ -1,9 +1,5 @@
 const HeaderPlayerList = () => {
-  return (
-    <div className="player-list">
-      
-    </div>
-  )
-}
+  return <div className="player-list"></div>;
+};
 
-export default HeaderPlayerList
+export default HeaderPlayerList;

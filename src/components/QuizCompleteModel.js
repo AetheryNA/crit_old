@@ -1,16 +1,20 @@
-import { Fragment, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { useRouter } from 'next/router'
+import { Fragment, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { useRouter } from "next/router";
 
 const QuizCompleteModel = ({ response }) => {
-  const [open, setOpen] = useState(true)
-  const router = useRouter()
+  const [open, setOpen] = useState(true);
+  const router = useRouter();
 
   console.log(response);
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={setOpen}>
+      <Dialog
+        as="div"
+        className="fixed z-10 inset-0 overflow-y-auto"
+        onClose={setOpen}
+      >
         <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
           <Transition.Child
             as={Fragment}
@@ -23,7 +27,10 @@ const QuizCompleteModel = ({ response }) => {
           >
             <Dialog.Overlay className="quiz-model__overlay fixed inset-0 transition-opacity" />
           </Transition.Child>
-          <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
+          <span
+            className="hidden sm:inline-block sm:align-middle sm:h-screen"
+            aria-hidden="true"
+          >
             &#8203;
           </span>
           <Transition.Child
@@ -41,15 +48,11 @@ const QuizCompleteModel = ({ response }) => {
                   <div className="mt-3 text-center sm:mt-0 w-full">
                     <Dialog.Title as="h3" className="quiz-model__heading">
                       <p> You are a </p>
-                      { response.type }
+                      {response.type}
                     </Dialog.Title>
                     <div className="mt-4">
-                      <p className="font-semibold">
-                        This is your personality
-                      </p>
-                      <p className="mt-4">
-                        {response.personality_msg}
-                      </p>
+                      <p className="font-semibold">This is your personality</p>
+                      <p className="mt-4">{response.personality_msg}</p>
                     </div>
                   </div>
                 </div>
@@ -58,7 +61,7 @@ const QuizCompleteModel = ({ response }) => {
                 <button
                   type="button"
                   className="button button--primary"
-                  onClick={() => router.push('/lobby')}
+                  onClick={() => router.push("/lobby")}
                 >
                   Go back to Lobby
                 </button>
@@ -68,7 +71,7 @@ const QuizCompleteModel = ({ response }) => {
         </div>
       </Dialog>
     </Transition.Root>
-  )
-}
+  );
+};
 
-export default QuizCompleteModel
+export default QuizCompleteModel;
