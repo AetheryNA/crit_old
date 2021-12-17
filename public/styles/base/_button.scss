@@ -7,7 +7,7 @@ button,
   background: {
     color: $orange;
     size: cover;
-  };
+  }
 
   padding: 10px;
   transition: 0.3s ease;
@@ -28,7 +28,7 @@ button,
   left: -15px;
   position: absolute;
   top: -5px;
-  
+
   svg {
     color: $dark-orange;
     height: 25px;

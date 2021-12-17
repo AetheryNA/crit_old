@@ -43,7 +43,7 @@
   &__card {
     padding: 10px 20px 15px;
     margin-bottom: 10px;
-    background-color: rgba($color: $white, $alpha: .05);
+    background-color: rgba($color: $white, $alpha: 0.05);
     cursor: pointer;
 
     @include tablet {

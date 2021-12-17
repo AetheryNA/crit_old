@@ -1,5 +1,5 @@
 // Transitions
-$basic-transition : 0.3s ease;
+$basic-transition: 0.3s ease;
 
 // Button Animations
 @mixin quizButtonAnim {
@@ -9,7 +9,7 @@ $basic-transition : 0.3s ease;
     content: "";
     width: 0;
     height: 0;
-    transition: .5s;
+    transition: 0.5s;
   }
 
   &::after {
@@ -50,18 +50,18 @@ $basic-transition : 0.3s ease;
 
 @keyframes iconPop {
   0% {
-    transform: translateY(0)
+    transform: translateY(0);
   }
 
   10% {
-    transform: translateY(-5px)
+    transform: translateY(-5px);
   }
 
   20% {
-    transform: translateY(0)
+    transform: translateY(0);
   }
 
   100% {
-    transform: translateY(0)
+    transform: translateY(0);
   }
 }

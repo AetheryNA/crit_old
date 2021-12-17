@@ -1,7 +1,7 @@
 .post-item {
   padding: 20px;
   margin-bottom: 20px;
-  background-color: rgba($color: $white, $alpha: .02);
+  background-color: rgba($color: $white, $alpha: 0.02);
   cursor: pointer;
   transition: $basic-transition;
 
@@ -94,7 +94,7 @@
 
   &__comment {
     input {
-      background-color: rgba($color: $white, $alpha: .06);
+      background-color: rgba($color: $white, $alpha: 0.06);
       color: $white;
 
       &::placeholder {

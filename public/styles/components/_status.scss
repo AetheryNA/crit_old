@@ -22,20 +22,20 @@
     left: 40px;
     top: 70px;
     width: 150px;
-  
+
     @include mobile-s {
       left: 60px;
     }
-  
+
     @include tablet {
       left: 100px;
     }
-  
+
     @include desktop-large {
       left: 135px;
     }
   }
-  
+
   &__item {
     margin-bottom: 10px;
     padding-left: 15px;
@@ -43,62 +43,62 @@
     font-weight: $regular;
     position: relative;
     transition: $basic-transition;
-  
+
     &:hover {
       padding-left: 17px;
     }
-  
+
     &::after {
       margin-top: 10px;
-      content: '';
+      content: "";
       display: block;
       width: 95%;
       height: 1px;
       background-color: $grey;
     }
-  
+
     &:last-child {
       margin-bottom: 0;
-  
+
       &::after {
-        content: '';
+        content: "";
         display: none;
       }
     }
-  
+
     &::before {
       background-color: $white;
       border-radius: 50%;
-      content: '';
+      content: "";
       height: 8px;
       left: 0px;
       position: absolute;
       top: 5px;
       width: 8px;
     }
-  
+
     &-online {
       &::before {
         background-color: $green;
       }
     }
-  
+
     &-idle {
       &::before {
         background-color: $orange;
       }
     }
-  
+
     &-dnd {
       &::before {
         background-color: $red;
       }
     }
-  
+
     &-hidden {
       &::before {
         background-color: $grey;
       }
     }
-  }  
+  }
 }

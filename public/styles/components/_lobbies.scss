@@ -1,7 +1,7 @@
 .lobbies {
   &__lobby {
     cursor: pointer;
-    
+
     &:hover {
       h3 {
         color: $dark-orange;
@@ -16,13 +16,13 @@
       margin-right: 15px;
     }
   }
-  
+
   &__info {
     img {
       border-radius: 50%;
       height: 30px;
       width: 30px;
-  
+
       @include tablet {
         height: 40px;
         width: 40px;

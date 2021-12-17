@@ -71,7 +71,7 @@
 
     &::after {
       margin-top: 10px;
-      content: '';
+      content: "";
       display: block;
       width: 95%;
       height: 1px;
@@ -82,7 +82,7 @@
       margin-bottom: 0;
 
       &::after {
-        content: '';
+        content: "";
         display: none;
       }
     }

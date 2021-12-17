@@ -3,21 +3,21 @@
   &::before {
     background: {
       repeat: no-repeat;
-    };
+    }
 
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     z-index: 1;
 
-    @include mobile-s{
+    @include mobile-s {
       display: none;
     }
   }
 
   &::after {
     background: {
-      image: url('../../img/login-background-left-m.svg');
+      image: url("../../img/login-background-left-m.svg");
     }
 
     left: -40px;
@@ -28,7 +28,7 @@
 
   &::before {
     background: {
-      image: url('../../img/login-background-right-m.svg');
+      image: url("../../img/login-background-right-m.svg");
     }
 
     right: -60px;
