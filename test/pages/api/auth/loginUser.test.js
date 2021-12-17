@@ -1,4 +1,4 @@
-import { beforeAll, afterAll, describe, expect, jest } from "@jest/globals";
+import { afterAll, beforeAll, describe, expect, jest, test } from "@jest/globals";
 import prisma from "../../../../lib/adapters/prismaClient";
 import bcrypt from "bcrypt";
 import nc from "next-connect";

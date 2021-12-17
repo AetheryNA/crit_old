@@ -1,4 +1,4 @@
-import { afterAll, expect, jest } from "@jest/globals";
+import { afterAll, describe, expect, jest, test } from "@jest/globals";
 import prisma from "../../../lib/adapters/prismaClient";
 
 describe.skip("Getting all trending posts", () => {

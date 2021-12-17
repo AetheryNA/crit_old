@@ -1,4 +1,4 @@
-import { expect } from "@jest/globals";
+import { describe, expect, test } from "@jest/globals";
 import prisma from "../../../lib/adapters/prismaClient";
 
 describe.skip("Should get posts from users", () => {

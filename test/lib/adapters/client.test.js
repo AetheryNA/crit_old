@@ -1,4 +1,4 @@
-import { jest, expect } from "@jest/globals";
+import { describe, expect, jest, test } from "@jest/globals";
 import prisma from "../../../lib/adapters/prismaClient";
 
 describe("Prisma Client", () => {
