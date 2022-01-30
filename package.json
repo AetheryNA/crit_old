@@ -12,8 +12,8 @@
     "migrate:test": "dotenv -e .env.test -- npx prisma migrate dev",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,scss}\"",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint . --ext .js,.ts,.tsx --fix",
-    "lint:nofix": "eslint . --ext .js,.ts,.tsx"
+    "lint": "eslint . --ext .ts,.tsx --fix",
+    "lint:nofix": "eslint . --ext .ts,.tsx"
   },
   "dependencies": {
     "@headlessui/react": "^1.3.0",
